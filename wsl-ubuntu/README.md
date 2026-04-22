@@ -36,9 +36,7 @@ You should see Ubuntu with `STATE: Running` and `VERSION: 2`.
 
 ---
 
-## Step 2: Install Channel SDK Dependencies (Optional but Recommended)
-
-Before running the OpenClaw installer, install the messaging platform SDKs for WhatsApp, Slack, Discord, Telegram, Nostr, and Feishu. This lets the installer detect them automatically.
+## Step 2: Install Channel SDK Dependencies
 
 Inside the **Ubuntu terminal**, run:
 
@@ -46,86 +44,31 @@ Inside the **Ubuntu terminal**, run:
 npm install -g @larksuiteoapi/node-sdk @whiskeysockets/baileys @slack/web-api @slack/bolt @slack/socket-mode nostr-tools discord.js telegraf
 ```
 
-![npm install command running in Ubuntu terminal](screenshots/installation_0.png)
-
-When it finishes you will see:
-
-```
-added 327 packages in 29s
-
-54 packages are looking for funding
-  run `npm fund` for details
-```
-
-![npm install complete output](screenshots/installation_0.png)
-
-> **What these packages are for**
-> | Package | Channel |
-> |---|---|
-> | `@whiskeysockets/baileys` | WhatsApp Web |
-> | `@slack/web-api` `@slack/bolt` `@slack/socket-mode` | Slack |
-> | `discord.js` | Discord |
-> | `telegraf` | Telegram |
-> | `nostr-tools` | Nostr |
-> | `@larksuiteoapi/node-sdk` | Feishu / Lark |
+![npm install running in Ubuntu terminal](screenshots/installation_0.png)
 
 ---
 
 ## Step 3: Install OpenClaw
 
-Inside the **Ubuntu terminal**, run the OpenClaw installer:
+Inside the **Ubuntu terminal**, run:
 
 ```bash
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
-![curl installer starting in Ubuntu terminal](screenshots/installation_1.png)
+![Installer starting — detecting linux and checking Node.js](screenshots/installation_1.png)
 
-The installer runs three stages and prints progress as it goes:
+![Installer stage 2 — installing OpenClaw npm package](screenshots/installation_2.png)
 
-**[1/3] Preparing environment**
+![Installer stage 3 — finalizing setup](screenshots/installation_3.png)
 
-```
-✓ Detected: linux
-✓ Node.js v22.22.2 found
-· Active Node.js: v22.22.2 (/usr/bin/node)
-· Active npm: 10.9.7 (/usr/bin/npm)
-```
-
-![Installer stage 1 output](screenshots/installation_2.png)
-
-**[2/3] Installing OpenClaw**
-
-```
-✓ Git already installed
-· Installing OpenClaw v2026.4.21
-✓ OpenClaw npm package installed
-✓ OpenClaw installed
-```
-
-![Installer stage 2 output](screenshots/installation_3.png)
-
-**[3/3] Finalizing setup**
-
-```
-✓ Gateway service metadata refreshed
-```
-
-![Installer stage 3 output](screenshots/installation_4.png)
-
-When the installer finishes you will see:
-
-```
-🦞 OpenClaw installed successfully (OpenClaw 2026.4.21 (f788c88))!
-```
-
-![OpenClaw installed successfully message](screenshots/instllation_5.png)
+![OpenClaw installed successfully message](screenshots/installation_4.png)
 
 > **Gateway Restart Warning**
-> You may see `Gateway service restart failed — continuing`. This is normal on a fresh WSL install. The gateway starts correctly in Step 6 when you run the daemon setup.
+> You may see `Gateway service restart failed — continuing`. This is normal on a fresh WSL install and is fixed in Step 7.
 
 > **npm Fallback**
-> If the install script fails, run:
+> If the install script fails:
 > ```bash
 > npm install -g openclaw@latest
 > ```
@@ -134,7 +77,7 @@ When the installer finishes you will see:
 
 ## Step 4: Fix PATH if `openclaw` is Not Found
 
-If `openclaw --version` returns `command not found`, add OpenClaw to your shell PATH:
+If `openclaw --version` returns `command not found`, run:
 
 ```bash
 echo 'export PATH="$HOME/.openclaw/bin:$PATH"' >> ~/.bashrc
@@ -147,188 +90,86 @@ source ~/.bashrc
 
 ## Step 5: Complete the Setup Wizard
 
-The installer launches the setup wizard automatically right after installation. Work through each screen as described below. If you need to restart the wizard later, run `openclaw`.
-
----
+The installer launches the setup wizard automatically. If you need to restart it later, run `openclaw`.
 
 ### 5a — Security Disclaimer
 
-The first screen is a security notice. Read it, then select **Yes** to continue.
+Read the notice, then select **Yes**.
 
-![OpenClaw security disclaimer screen](screenshots/setup_security.png)
-
-Key points:
-- OpenClaw is in **Beta** — expect rough edges.
-- It is a **personal agent by default** — one trusted operator boundary.
-- If multiple users can message a tool-enabled agent, they share its tool authority.
-- Run `openclaw security audit --deep` regularly.
-
----
+![Security disclaimer screen](screenshots/setup_security.png)
 
 ### 5b — Setup Mode
 
 Select **QuickStart**.
 
-![Setup mode selection — QuickStart highlighted](screenshots/setup_mode.png)
-
-QuickStart keeps the default gateway settings:
-
-| Setting | Value |
-|---|---|
-| Gateway port | 18789 |
-| Gateway bind | Loopback (127.0.0.1) |
-| Gateway auth | Token (default) |
-| Tailscale exposure | Off |
-
----
+![Setup mode — QuickStart selected](screenshots/setup_mode.png)
 
 ### 5c — Config Handling
 
-If a config file already exists the wizard will show what it detected. Select **Update values** to keep existing settings and only change what the wizard asks about.
+Select **Update values**.
 
-![Config handling — Update values selected](screenshots/setup_config.png)
-
----
+![Config handling screen](screenshots/setup_config.png)
 
 ### 5d — Model / Auth Provider
 
-Select **Anthropic** as the provider.
+Select **Anthropic**, then select **Anthropic Claude CLI**.
 
-![Model provider selection — Anthropic highlighted](screenshots/setup_provider.png)
+![Model provider — Anthropic selected](screenshots/setup_provider.png)
 
-For the auth method, select **Anthropic Claude CLI**. OpenClaw detects your existing Claude CLI login automatically.
-
-![Anthropic auth method — Claude CLI selected](screenshots/setup_auth.png)
-
-You will see a confirmation:
-
-```
-Claude CLI auth detected; switched Anthropic model selection to the local Claude CLI backend.
-Default model set to claude-cli/claude-opus-4-7
-```
+![Auth method — Claude CLI selected](screenshots/setup_auth.png)
 
 ![Model configured confirmation](screenshots/setup_model_confirmed.png)
 
 When asked **Default model**, select **Keep current**.
 
 > **Model Not Found Warning**
-> You may see `Model not found: claude-cli/claude-opus-4-7`. You can ignore this for now and update the model later with `openclaw config set agents.defaults.model <model>` or by running `/models list` inside the agent.
+> You may see `Model not found: claude-cli/claude-opus-4-7`. Ignore it for now — update the model later with `/models list` inside the agent.
 
----
+### 5e — Channel Selection
 
-### 5e — Channel Status and Selection
-
-The wizard lists every supported channel and its current status.
+Select **Skip for now**. You can connect channels any time by running `openclaw config`.
 
 ![Channel status overview](screenshots/setup_channel_status.png)
 
-All channels will show **needs setup** on a fresh install. Use the arrow keys to select a channel and press **Enter** to configure it now, or scroll down and select **Skip for now** to configure channels later.
+![Channel selection — Skip for now](screenshots/setup_channel_select.png)
 
-![Channel selection list](screenshots/setup_channel_select.png)
+### 5f — Web Search
 
-> You can configure channels any time by running `openclaw config`.
+Select **Skip for now**.
 
----
-
-### 5f — Web Search Provider
-
-OpenClaw can search the web when answering questions. Select a provider or choose **Skip for now** to enable it later.
-
-![Web search provider selection](screenshots/setup_web_search.png)
-
-> To enable web search later:
-> ```bash
-> openclaw configure --section web
-> ```
-
----
+![Web search provider screen](screenshots/setup_web_search.png)
 
 ### 5g — Skills
 
-The wizard shows how many skills are ready to use.
-
-```
-Eligible: 12
-Missing requirements: 34
-Unsupported on this OS: 7
-Blocked by allowlist: 0
-```
+Select **No**.
 
 ![Skills status screen](screenshots/setup_skills.png)
 
-Select **No** to skip skills configuration for now. You can enable skills later.
-
----
-
 ### 5h — Hooks
 
-Hooks let you automate actions when agent commands run (for example, saving session context on `/reset`). Select **Skip for now**.
+Select **Skip for now**.
 
 ![Hooks configuration screen](screenshots/setup_hooks.png)
 
-> To configure hooks later:
-> ```
-> https://docs.openclaw.ai/automation/hooks
-> ```
-
----
-
 ### 5i — Gateway Service
 
-The wizard installs the gateway as a **Node** service (stable and supported on WSL).
+Select **Restart**.
 
-![Gateway service runtime — Node selected](screenshots/setup_gateway_runtime.png)
-
-If the gateway is already installed, select **Restart** to apply the new configuration.
-
-![Gateway service restart confirmation](screenshots/setup_gateway_restart.png)
-
-You will see:
-
-```
-◇  Gateway service restarted.
-```
-
----
+![Gateway service restart screen](screenshots/setup_gateway_restart.png)
 
 ### 5j — Control UI
 
-After the gateway restarts, the wizard shows your dashboard links:
+The wizard shows your dashboard URL. Save it.
 
-```
-Web UI: http://127.0.0.1:18789/
-Web UI (with token): http://127.0.0.1:18789/#token=<your-token>
-Gateway WS: ws://127.0.0.1:18789
-Gateway: reachable
-```
-
-![Control UI info screen with dashboard URL](screenshots/setup_control_ui.png)
-
-Save the tokenized URL — you will need it to open the dashboard.
-
-> **Gateway Token**
-> View your token anytime:
-> ```bash
-> openclaw config get gateway.auth.token
-> ```
-
----
+![Control UI screen with dashboard URL](screenshots/setup_control_ui.png)
 
 ### 5k — Start TUI
 
-The wizard offers to launch the Terminal UI (TUI) to personalize your agent. Select **Do this later** to finish setup first.
+Select **Do this later**.
 
-![Start TUI prompt — Do this later selected](screenshots/setup_tui.png)
-
----
+![Start TUI prompt](screenshots/setup_tui.png)
 
 ### 5l — Onboarding Complete
-
-When you see the final screen, setup is done.
-
-```
-└  Onboarding complete. Use the dashboard link above to control OpenClaw.
-```
 
 ![Onboarding complete screen](screenshots/setup_complete.png)
 
@@ -342,36 +183,22 @@ openclaw --version
 
 ![openclaw --version output](screenshots/version.png)
 
-You should see:
-
-```
-OpenClaw 2026.4.21 (f788c88)
-```
-
 ---
 
 ## Step 7: Install the Background Daemon
-
-Register the OpenClaw gateway as a persistent systemd service so it starts automatically every time you open WSL:
 
 ```bash
 openclaw onboard --install-daemon
 ```
 
-![openclaw onboard --install-daemon starting](screenshots/onboard_daemon.png)
+![openclaw onboard --install-daemon wizard](screenshots/onboard_daemon.png)
 
-This runs the same setup wizard again. Follow the same choices as Step 5. At the **Gateway service** screen the wizard will install and start the daemon.
-
-When complete you will see:
-
-```
-└  Onboarding complete. Use the dashboard link above to control OpenClaw.
-```
+This re-runs the same wizard. Follow the same choices as Step 5.
 
 ![Onboarding with daemon complete](screenshots/onboard_daemon_complete.png)
 
 > **Stay Inside WSL**
-> Run every OpenClaw command from your **Ubuntu terminal**, not from PowerShell. Files in `~/.openclaw/` live inside the Linux filesystem and are not visible to native Windows tools.
+> Run every OpenClaw command from your **Ubuntu terminal**, not from PowerShell.
 
 ---
 
@@ -381,23 +208,10 @@ When complete you will see:
 openclaw dashboard
 ```
 
-![openclaw dashboard command output](screenshots/dashboard_open.png)
-
-OpenClaw prints the dashboard URL, copies it to your clipboard, and opens it in your browser:
-
-```
-Dashboard URL: http://127.0.0.1:18789/#token=<your-token>
-Copied to clipboard.
-Opened in your browser. Keep that tab to control OpenClaw.
-```
+![openclaw dashboard opening in browser](screenshots/dashboard_open.png)
 
 ![OpenClaw dashboard in browser](screenshots/dashboard_browser.png)
 
-From the dashboard you can start chatting with your agent, connect channels, and manage settings.
-
 ---
-
-> **Stay Inside WSL**
-> From this point on, run every OpenClaw command from your **Ubuntu terminal**, not from PowerShell.
 
 Continue with the **channel configuration** section to connect your first messaging platform.
