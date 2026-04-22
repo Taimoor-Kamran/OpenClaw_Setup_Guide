@@ -57,7 +57,7 @@ added 327 packages in 21s
   run `npm fund` for details
 ```
 
-![npm install complete](screenshots/npm_install_done.png)
+![npm install complete](screenshots/installation_1.png)
 
 > **What these packages are for**
 > - `@whiskeysockets/baileys` — WhatsApp Web
