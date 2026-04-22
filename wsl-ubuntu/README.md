@@ -45,6 +45,8 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
 ![OpenClaw installer running in Ubuntu terminal](screenshots/installation.png)
+![OpenClaw installer running in Ubuntu terminal](screenshots/installation_1.png)
+![OpenClaw installer running in Ubuntu terminal](screenshots/installation.png)
 
 The installer detects Linux, installs Node.js if needed, installs the OpenClaw npm package, and creates `~/.openclaw/` inside your Ubuntu home directory (not your Windows `C:\Users\...`).
 
