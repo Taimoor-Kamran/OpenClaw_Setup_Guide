@@ -85,7 +85,7 @@ Then verify:
 openclaw --version
 ```
 
-![openclaw --version showing OpenClaw vX.X.X](screenshots/06-version-check.png)
+![openclaw --version showing OpenClaw vX.X.X](screenshots/version.png)
 
 You should see a version line like `OpenClaw vX.X.X (latest)`.
 
