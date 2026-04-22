@@ -46,7 +46,7 @@ Inside the **Ubuntu terminal**, run:
 npm install -g @larksuiteoapi/node-sdk @whiskeysockets/baileys @slack/web-api @slack/bolt @slack/socket-mode nostr-tools discord.js telegraf
 ```
 
-![npm install of channel SDKs in Ubuntu terminal](screenshots/npm_install.png)
+![npm install of channel SDKs in Ubuntu terminal](screenshots/installation_1.png)
 
 You should see output like:
 
