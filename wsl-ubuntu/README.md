@@ -208,7 +208,7 @@ This re-runs the same wizard. Follow the same choices as Step 5.
 openclaw dashboard
 ```
 
-![openclaw dashboard opening in browser](screenshots/dashboard_open.png)
+![openclaw dashboard opening in browser](screenshots/installation_23.png)
 
 ![OpenClaw dashboard in browser](screenshots/dashboard_browser.png)
 
