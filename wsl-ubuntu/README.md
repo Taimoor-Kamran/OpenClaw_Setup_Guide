@@ -15,7 +15,7 @@ Then run:
 wsl --install -d Ubuntu
 ```
 
-![WSL install command in PowerShell](screenshots/01-wsl-install.png)
+![WSL install command in PowerShell](screenshots/powershell.png)
 
 This single command enables the WSL feature, installs the WSL2 kernel, and downloads Ubuntu. **Reboot when prompted.**
 
