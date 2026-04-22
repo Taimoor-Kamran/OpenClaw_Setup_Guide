@@ -96,7 +96,7 @@ The installer launches the setup wizard automatically. If you need to restart it
 
 Read the notice, then select **Yes**.
 
-![Security disclaimer screen](screenshots/setup_security.png)
+![Security disclaimer screen](screenshots/installation_5.png)
 
 ### 5b — Setup Mode
 
