@@ -57,7 +57,7 @@ When it finishes, you see a version confirmation:
 OpenClaw vX.X.X (latest)
 ```
 
-![OpenClaw version confirmation after install](screenshots/04-version-confirmation.png)
+![OpenClaw version confirmation after install](screenshots/version.png)
 
 > **npm Fallback**
 > If the install script fails, install directly via npm:
