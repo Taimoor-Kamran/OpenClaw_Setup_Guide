@@ -195,7 +195,7 @@ openclaw onboard --install-daemon
 
 This re-runs the same wizard. Follow the same choices as Step 5.
 
-![Onboarding with daemon complete](screenshots/onboard_daemon_complete.png)
+![Onboarding with daemon complete](screenshots/installation_22.png)
 
 > **Stay Inside WSL**
 > Run every OpenClaw command from your **Ubuntu terminal**, not from PowerShell.
