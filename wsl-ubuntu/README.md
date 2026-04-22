@@ -137,19 +137,19 @@ Select **Skip for now**. You can connect channels any time by running `openclaw 
 
 Select **Skip for now**.
 
-![Web search provider screen](screenshots/setup_web_search.png)
+![Web search provider screen](screenshots/installation_13.png)
 
 ### 5g — Skills
 
 Select **No**.
 
-![Skills status screen](screenshots/setup_skills.png)
+![Skills status screen](screenshots/installation_14.png)
 
 ### 5h — Hooks
 
 Select **Skip for now**.
 
-![Hooks configuration screen](screenshots/setup_hooks.png)
+![Hooks configuration screen](screenshots/installation_15.png)
 
 ### 5i — Gateway Service
 
