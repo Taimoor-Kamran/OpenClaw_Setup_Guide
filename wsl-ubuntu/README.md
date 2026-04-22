@@ -92,7 +92,7 @@ The installer runs three stages and prints progress as it goes:
 · Active npm: 10.9.7 (/usr/bin/npm)
 ```
 
-![Installer stage 1 output](screenshots/)
+![Installer stage 1 output](screenshots/installation_2.png)
 
 **[2/3] Installing OpenClaw**
 
@@ -103,7 +103,7 @@ The installer runs three stages and prints progress as it goes:
 ✓ OpenClaw installed
 ```
 
-![Installer stage 2 output](screenshots/)
+![Installer stage 2 output](screenshots/installation_3.png)
 
 **[3/3] Finalizing setup**
 
@@ -111,7 +111,7 @@ The installer runs three stages and prints progress as it goes:
 ✓ Gateway service metadata refreshed
 ```
 
-![Installer stage 3 output](screenshots/)
+![Installer stage 3 output](screenshots/instllation_4.png)
 
 When the installer finishes you will see:
 
