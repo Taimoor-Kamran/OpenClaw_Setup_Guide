@@ -40,11 +40,11 @@ You should see Ubuntu with `STATE: Running` and `VERSION: 2`.
 
 Inside the **Ubuntu terminal**, run the same Linux installer:
 
-```bash
+```bash     
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
-![OpenClaw installer running in Ubuntu terminal](screenshots/03-install-script.png)
+![OpenClaw installer running in Ubuntu terminal](screenshots/installation.png)
 
 The installer detects Linux, installs Node.js if needed, installs the OpenClaw npm package, and creates `~/.openclaw/` inside your Ubuntu home directory (not your Windows `C:\Users\...`).
 
