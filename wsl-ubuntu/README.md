@@ -114,11 +114,11 @@ Select **Update values**.
 
 Select **Anthropic**, then select **Anthropic Claude CLI**.
 
-![Model provider — Anthropic selected](screenshots/setup_provider.png)
+![Model provider — Anthropic selected](screenshots/installation_8.png)
 
-![Auth method — Claude CLI selected](screenshots/setup_auth.png)
+![Auth method — Claude CLI selected](screenshots/installation_9.png)
 
-![Model configured confirmation](screenshots/setup_model_confirmed.png)
+![Model configured confirmation](screenshots/installation_10.png)
 
 When asked **Default model**, select **Keep current**.
 
