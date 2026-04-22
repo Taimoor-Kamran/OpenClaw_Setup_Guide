@@ -129,9 +129,9 @@ When asked **Default model**, select **Keep current**.
 
 Select **Skip for now**. You can connect channels any time by running `openclaw config`.
 
-![Channel status overview](screenshots/setup_channel_status.png)
+![Channel status overview](screenshots/installation_11.png)
 
-![Channel selection — Skip for now](screenshots/setup_channel_select.png)
+![Channel selection — Skip for now](screenshots/installation_12.png)
 
 ### 5f — Web Search
 
