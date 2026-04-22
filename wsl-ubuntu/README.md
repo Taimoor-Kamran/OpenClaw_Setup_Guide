@@ -155,13 +155,13 @@ Select **Skip for now**.
 
 Select **Restart**.
 
-![Gateway service restart screen](screenshots/setup_gateway_restart.png)
+![Gateway service restart screen](screenshots/installation_16.png)
 
 ### 5j — Control UI
 
 The wizard shows your dashboard URL. Save it.
 
-![Control UI screen with dashboard URL](screenshots/setup_control_ui.png)
+![Control UI screen with dashboard URL](screenshots/installation_17.png)
 
 ### 5k — Start TUI
 
