@@ -191,7 +191,7 @@ openclaw --version
 openclaw onboard --install-daemon
 ```
 
-![openclaw onboard --install-daemon wizard](screenshots/onboard_daemon.png)
+![openclaw onboard --install-daemon wizard](screenshots/installation_21.png)
 
 This re-runs the same wizard. Follow the same choices as Step 5.
 
