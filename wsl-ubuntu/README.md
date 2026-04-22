@@ -167,11 +167,11 @@ The wizard shows your dashboard URL. Save it.
 
 Select **Do this later**.
 
-![Start TUI prompt](screenshots/setup_tui.png)
+![Start TUI prompt](screenshots/installation_18.png)
 
 ### 5l — Onboarding Complete
 
-![Onboarding complete screen](screenshots/setup_complete.png)
+![Onboarding complete screen](screenshots/installation_19.png)
 
 ---
 
