@@ -181,7 +181,7 @@ Select **Do this later**.
 openclaw --version
 ```
 
-![openclaw --version output](screenshots/version.png)
+![openclaw --version output](screenshots/installation_20.png)
 
 ---
 
