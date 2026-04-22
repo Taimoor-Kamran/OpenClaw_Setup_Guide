@@ -102,13 +102,13 @@ Read the notice, then select **Yes**.
 
 Select **QuickStart**.
 
-![Setup mode — QuickStart selected](screenshots/setup_mode.png)
+![Setup mode — QuickStart selected](screenshots/installation_6.png)
 
 ### 5c — Config Handling
 
 Select **Update values**.
 
-![Config handling screen](screenshots/setup_config.png)
+![Config handling screen](screenshots/installation_7.png)
 
 ### 5d — Model / Auth Provider
 
