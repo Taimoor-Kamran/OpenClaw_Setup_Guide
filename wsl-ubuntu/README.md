@@ -111,7 +111,7 @@ The installer runs three stages and prints progress as it goes:
 ✓ Gateway service metadata refreshed
 ```
 
-![Installer stage 3 output](screenshots/)
+![Installer stage 3 output](screenshots/installation_4.png)
 
 When the installer finishes you will see:
 
@@ -119,7 +119,7 @@ When the installer finishes you will see:
 🦞 OpenClaw installed successfully (OpenClaw 2026.4.21 (f788c88))!
 ```
 
-![OpenClaw installed successfully message](screenshots/instllation_4.png)
+![OpenClaw installed successfully message](screenshots/instllation_5.png)
 
 > **Gateway Restart Warning**
 > You may see `Gateway service restart failed — continuing`. This is normal on a fresh WSL install. The gateway starts correctly in Step 6 when you run the daemon setup.
