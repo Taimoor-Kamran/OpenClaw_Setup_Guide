@@ -27,7 +27,7 @@ Verify the install from PowerShell:
 wsl -l -v
 ```
 
-![wsl -l -v output showing Ubuntu Running VERSION 2](screenshots/02-wsl-verify.png)
+![wsl -l -v output showing Ubuntu Running VERSION 2](screenshots/powershell_1.png)
 
 You should see Ubuntu with `STATE: Running` and `VERSION: 2`.
 
