@@ -77,7 +77,7 @@ echo 'export PATH="$HOME/.openclaw/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-![Adding openclaw to PATH in bashrc](screenshots/05-path-fix.png)
+![Adding openclaw to PATH in bashrc](screenshots/error_fix.png)
 
 Then verify:
 
