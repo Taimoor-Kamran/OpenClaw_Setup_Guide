@@ -57,7 +57,7 @@ added 327 packages in 29s
   run `npm fund` for details
 ```
 
-![npm install complete output](screenshots/npm_install_done.png)
+![npm install complete output](screenshots/installation_0.png)
 
 > **What these packages are for**
 > | Package | Channel |
@@ -79,7 +79,7 @@ Inside the **Ubuntu terminal**, run the OpenClaw installer:
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
-![curl installer starting in Ubuntu terminal](screenshots/installation.png)
+![curl installer starting in Ubuntu terminal](screenshots/installation_1.png)
 
 The installer runs three stages and prints progress as it goes:
 
