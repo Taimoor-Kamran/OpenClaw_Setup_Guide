@@ -92,7 +92,7 @@ The installer runs three stages and prints progress as it goes:
 · Active npm: 10.9.7 (/usr/bin/npm)
 ```
 
-![Installer stage 1 output](screenshots/installation_1.png)
+![Installer stage 1 output](screenshots/)
 
 **[2/3] Installing OpenClaw**
 
@@ -103,7 +103,7 @@ The installer runs three stages and prints progress as it goes:
 ✓ OpenClaw installed
 ```
 
-![Installer stage 2 output](screenshots/installation_2.png)
+![Installer stage 2 output](screenshots/)
 
 **[3/3] Finalizing setup**
 
@@ -111,7 +111,7 @@ The installer runs three stages and prints progress as it goes:
 ✓ Gateway service metadata refreshed
 ```
 
-![Installer stage 3 output](screenshots/installation_3.png)
+![Installer stage 3 output](screenshots/)
 
 When the installer finishes you will see:
 
@@ -119,7 +119,7 @@ When the installer finishes you will see:
 🦞 OpenClaw installed successfully (OpenClaw 2026.4.21 (f788c88))!
 ```
 
-![OpenClaw installed successfully message](screenshots/installation_4.png)
+![OpenClaw installed successfully message](screenshots/)
 
 > **Gateway Restart Warning**
 > You may see `Gateway service restart failed — continuing`. This is normal on a fresh WSL install. The gateway starts correctly in Step 6 when you run the daemon setup.
