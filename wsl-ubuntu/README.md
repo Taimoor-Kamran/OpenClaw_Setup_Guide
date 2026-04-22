@@ -77,9 +77,9 @@ Inside the **Ubuntu terminal**, run the OpenClaw installer:
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
-![OpenClaw installer running in Ubuntu terminal](screenshots/installation.png)
 ![OpenClaw installer running in Ubuntu terminal](screenshots/installation_1.png)
 ![OpenClaw installer running in Ubuntu terminal](screenshots/installation_2.png)
+![OpenClaw installer running in Ubuntu terminal](screenshots/installation_3.png)
 ![OpenClaw installer running in Ubuntu terminal](screenshots/installation_4.png)
 
 The installer runs three stages:
