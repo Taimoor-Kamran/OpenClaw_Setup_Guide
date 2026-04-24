@@ -11,7 +11,15 @@ This guide walks you through linking your WhatsApp account to OpenClaw so your a
 
 ## Step 1: Open the OpenClaw Dashboard
 
-Open your browser and go to your dashboard URL:
+Run this command in your Ubuntu terminal to open the dashboard:
+
+```bash
+openclaw dashboard
+```
+
+![openclaw dashboard command in terminal](screenshots/dashboard_cmd.png)
+
+This opens the dashboard in your browser automatically. If it does not open, go to:
 
 ```
 http://127.0.0.1:18789/
