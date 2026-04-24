@@ -210,7 +210,7 @@ openclaw dashboard
 
 ![openclaw dashboard opening in browser](screenshots/installation_23.png)
 
-![OpenClaw dashboard in browser](screenshots/dashboard_browser.png)
+![OpenClaw dashboard in browser](screenshots/installation_24.png)
 
 ---
 
