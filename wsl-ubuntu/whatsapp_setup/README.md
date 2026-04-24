@@ -43,7 +43,7 @@ In the dashboard, click **Channels** in the left sidebar.
 
 ---
 
-## Step 3: Install the WhatsApp Plugin
+## Step 3: Add the WhatsApp Channel (CLI)
 
 In your Ubuntu terminal, run:
 
@@ -53,15 +53,19 @@ openclaw channels add --channel whatsapp
 
 ![openclaw channels add --channel whatsapp command](screenshots/installation_26.png)
 
-OpenClaw will prompt you to install the `@openclaw/whatsapp` plugin. Confirm the install.
+You will see:
 
-![Plugin install confirmation prompt](screenshots/installation_27.png)
+```
+Added WhatsApp account "default".
+```
+
+![WhatsApp account added confirmation](screenshots/installation_27.png)
 
 ---
 
 ## Step 4: Restart the Gateway
 
-After the plugin installs, restart the gateway:
+After adding the channel, restart the gateway so the dashboard picks it up:
 
 ```bash
 openclaw gateway restart
@@ -69,7 +73,7 @@ openclaw gateway restart
 
 ![openclaw gateway restart command](screenshots/installation_28.png)
 
-Or stop and start it manually:
+Or stop and start manually:
 
 ```bash
 openclaw gateway stop
@@ -78,24 +82,45 @@ openclaw gateway start
 
 ---
 
-## Step 5: Link WhatsApp via QR Code
+## Step 5: Link WhatsApp — via Dashboard
 
-Once the gateway is back up:
+Once the gateway is back up, go to your browser:
 
-1. Go to your dashboard → **Channels** → **WhatsApp**.
-2. Click **Show QR**.
+1. Refresh the dashboard page.
+2. Go to **Channels** → **WhatsApp**.
+3. Click **Show QR**.
 
-![WhatsApp channel showing Show QR button](screenshots/installation_29.png)
+![WhatsApp channel — Show QR button](screenshots/installation_29.png)
 
-3. A QR code appears on your screen.
+4. A QR code appears on your screen.
 
 ![QR code displayed in dashboard](screenshots/installation_30.png)
 
-4. On your phone: open **WhatsApp** → **Settings** → **Linked Devices** → **Link a Device** → scan the QR code.
+5. On your phone: open **WhatsApp** → **Settings** → **Linked Devices** → **Link a Device** → scan the QR code.
 
-The status changes to **Linked: Yes** and **Running: Yes**.
+After scanning, the dashboard shows:
+
+```
+Linked: Yes
+Running: Yes
+Connected: Yes
+```
 
 ![WhatsApp linked and running status in dashboard](screenshots/installation_31.png)
+
+---
+
+## Step 5 (Alternative): Link WhatsApp — via Terminal
+
+If the dashboard QR does not work, you can scan directly from the terminal instead:
+
+```bash
+openclaw channels login --channel whatsapp
+```
+
+![QR code displayed in terminal](screenshots/installation_32.png)
+
+Scan the QR code that appears in the terminal with your phone using the same steps above.
 
 ---
 
@@ -103,7 +128,7 @@ The status changes to **Linked: Yes** and **Running: Yes**.
 
 Send a message to your own WhatsApp number (or ask someone to message the linked number). Your OpenClaw agent should reply.
 
-![Test message received and replied to in WhatsApp](screenshots/test_message.png)
+![Test message received and replied to in WhatsApp](screenshots/installation_33.png)
 
 ---
 
@@ -117,7 +142,7 @@ openclaw pairing approve whatsapp <code>
 
 Replace `<code>` with the code shown in the message.
 
-![Pairing code approval in terminal](screenshots/pairing.png)
+![Pairing code approval in terminal](screenshots/installation_34.png)
 
 > To allow anyone to message without a pairing code (open mode):
 > ```bash
@@ -127,19 +152,32 @@ Replace `<code>` with the code shown in the message.
 
 ---
 
+## Quick Checklist
+
+| Issue | Fix |
+|---|---|
+| Plugin not installed | `openclaw channels add --channel whatsapp` |
+| Gateway not running | `openclaw gateway start` |
+| QR expired | Click **Relink** and scan again quickly |
+| Already 4 linked devices | Remove an old device in WhatsApp first |
+
+---
+
 ## Troubleshooting
 
-**QR code expired** — QR codes expire after about 60 seconds. Refresh the dashboard page to get a new one.
+**WhatsApp disconnected after a while** — Re-scan the QR code:
 
-**WhatsApp disconnected after a while** — Run `openclaw gateway status --deep` to check the connection. Re-scan the QR code if needed.
+```bash
+openclaw channels login --channel whatsapp
+```
 
-**Agent not replying** — Make sure the gateway service is running:
+**Agent not replying** — Check gateway status:
 
 ```bash
 openclaw gateway status
 ```
 
-If it is stopped, restart it:
+If stopped, restart it:
 
 ```bash
 openclaw gateway restart
