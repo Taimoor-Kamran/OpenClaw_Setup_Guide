@@ -47,7 +47,7 @@ In the dashboard, click **Channels** in the left sidebar.
 
 Find **WhatsApp** in the channel list and click **Configure**.
 
-![WhatsApp channel in the list](screenshots/installation_26.png)
+![WhatsApp channel in the list](screenshots/)
 
 ---
 
@@ -57,7 +57,7 @@ OpenClaw shows a QR code on your laptop screen. Now link it from your phone.
 
 **On your laptop** — the QR code will appear in the dashboard like this:
 
-![QR code shown in OpenClaw dashboard on laptop](screenshots/installation_27.png)
+![QR code shown in OpenClaw dashboard on laptop](screenshots/installation_26.png)
 
 **On your phone** — follow these steps:
 
