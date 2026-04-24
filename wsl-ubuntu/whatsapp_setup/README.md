@@ -18,7 +18,7 @@ First make sure the gateway is running:
 openclaw gateway start
 ```
 
-![openclaw gateway start command](screenshots/installation_23.png)
+![openclaw gateway start command](screenshots/installation_23b.png)
 
 Then open the dashboard:
 
