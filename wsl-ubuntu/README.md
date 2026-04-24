@@ -2,6 +2,11 @@
 
 If you prefer a Linux environment on Windows (recommended for the rest of this book), install OpenClaw inside WSL2 + Ubuntu. WSL gives you a real Linux terminal next to Windows, and every Linux command in this chapter then works exactly as written.
 
+> **Before you start**
+> - Windows 10 version 2004 or higher, or Windows 11
+> - Node.js 22 or higher is required. Check with: `node --version`
+> - A stable internet connection
+
 ---
 
 ## Step 1: Enable WSL and Install Ubuntu
@@ -36,19 +41,7 @@ You should see Ubuntu with `STATE: Running` and `VERSION: 2`.
 
 ---
 
-## Step 2: Install Channel SDK Dependencies
-
-Inside the **Ubuntu terminal**, run:
-
-```bash
-npm install -g @larksuiteoapi/node-sdk @whiskeysockets/baileys @slack/web-api @slack/bolt @slack/socket-mode nostr-tools discord.js telegraf
-```
-
-![npm install running in Ubuntu terminal](screenshots/installation_0.png)
-
----
-
-## Step 3: Install OpenClaw
+## Step 2: Install OpenClaw
 
 Inside the **Ubuntu terminal**, run:
 
@@ -65,13 +58,25 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 ![OpenClaw installed successfully message](screenshots/installation_4.png)
 
 > **Gateway Restart Warning**
-> You may see `Gateway service restart failed — continuing`. This is normal on a fresh WSL install and is fixed in Step 7.
+> You may see `Gateway service restart failed — continuing`. This is normal on a fresh WSL install and is fixed in Step 8.
 
 > **npm Fallback**
 > If the install script fails:
 > ```bash
 > npm install -g openclaw@latest
 > ```
+
+---
+
+## Step 3: Install Channel SDK Dependencies
+
+Inside the **Ubuntu terminal**, run:
+
+```bash
+npm install -g @larksuiteoapi/node-sdk @whiskeysockets/baileys @slack/web-api @slack/bolt @slack/socket-mode nostr-tools discord.js telegraf
+```
+
+![npm install running in Ubuntu terminal](screenshots/installation_0.png)
 
 ---
 
@@ -195,6 +200,9 @@ openclaw onboard --install-daemon
 
 This re-runs the same wizard. Follow the same choices as Step 5.
 
+> **Quick reference — select in order:**
+> Yes → QuickStart → Update values → Anthropic → Claude CLI → Keep current → Skip → Skip → No → Skip → Restart → Do this later
+
 ![Onboarding with daemon complete](screenshots/installation_22.png)
 
 > **Stay Inside WSL**
@@ -204,14 +212,26 @@ This re-runs the same wizard. Follow the same choices as Step 5.
 
 ## Step 8: Open the Dashboard
 
+Make sure the gateway is running first:
+
+```bash
+openclaw gateway start
+```
+
+> Make sure the gateway is running before opening the dashboard. If it is already running this command is safe to run again.
+
+Then open the dashboard:
+
 ```bash
 openclaw dashboard
 ```
 
-![openclaw dashboard opening in browser](screenshots/installation_23.png)
+![openclaw gateway start and dashboard commands](screenshots/installation_23b.png)
 
 ![OpenClaw dashboard in browser](screenshots/installation_24.png)
 
+> **After a reboot:** Run `openclaw gateway start` then `openclaw dashboard` to get back to your dashboard.
+
 ---
 
-Continue with the **channel configuration** section to connect your first messaging platform.
+> Continue with the [WhatsApp setup guide](whatsapp_setup/README.md) to connect your first messaging platform.
