@@ -17,7 +17,7 @@ Run this command in your Ubuntu terminal to open the dashboard:
 openclaw dashboard
 ```
 
-![openclaw dashboard command in terminal](screenshots/dashboard_cmd.png)
+![openclaw dashboard command in terminal](screenshots/installation_23)
 
 This opens the dashboard in your browser automatically. If it does not open, go to:
 
