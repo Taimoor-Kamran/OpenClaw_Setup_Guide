@@ -124,15 +124,74 @@ Scan the QR code that appears in the terminal with your phone using the same ste
 
 ---
 
-## Step 6: Send a Test Message
+## Step 6: Allow Your Phone Number
 
-Send a message to your own WhatsApp number (or ask someone to message the linked number). Your OpenClaw agent should reply.
+Before testing, add your phone number to the **Allow From** list so the bot accepts your messages.
 
-![Test message received and replied to in WhatsApp](screenshots/installation_33.png)
+In the dashboard, find the **Allow From** section:
+
+1. Click **Add**.
+2. Enter your number with country code — example: `+923XXXXXXXXX`.
+3. Click **Save**.
+
+![Allow From section in dashboard](screenshots/installation_33.png)
+
+![Phone number added to Allow From list](screenshots/installation_34.png)
 
 ---
 
-## Step 7: Approve the Pairing Code (First DM)
+## Step 7: Send a Test Message
+
+Open WhatsApp on your phone and send a message to the number you linked. Try:
+
+```
+hello
+```
+
+or
+
+```
+what can you do?
+```
+
+OpenClaw should reply.
+
+![Test message reply in WhatsApp](screenshots/installation_35.png)
+
+---
+
+## Step 8: Fix Raw JSON Replies (If Needed)
+
+If OpenClaw replies with raw JSON instead of normal text, fix it from the dashboard:
+
+**1. Enable Block Streaming** — find **Block Streaming** and toggle it **ON**.
+
+![Block Streaming toggle ON](screenshots/installation_36.png)
+
+**2. Set Chunk Mode to newline** — find **Chunk Mode** and select **newline**.
+
+![Chunk Mode set to newline](screenshots/installation_37.png)
+
+**3. Set Reaction Level to minimal** — find **Reaction Level** and select **minimal**.
+
+![Reaction Level set to minimal](screenshots/installation_38.png)
+
+**4. Click Save.**
+
+![Save button in dashboard](screenshots/installation_39.png)
+
+If replies are still raw JSON after saving, update OpenClaw and restart:
+
+```bash
+openclaw update
+openclaw gateway restart
+```
+
+![openclaw update and restart commands](screenshots/installation_40.png)
+
+---
+
+## Step 9: Approve the Pairing Code (First DM)
 
 The first time someone new messages your agent, OpenClaw sends a **pairing code** for security. To approve it, run:
 
@@ -142,7 +201,7 @@ openclaw pairing approve whatsapp <code>
 
 Replace `<code>` with the code shown in the message.
 
-![Pairing code approval in terminal](screenshots/installation_34.png)
+![Pairing code approval in terminal](screenshots/installation_41.png)
 
 > To allow anyone to message without a pairing code (open mode):
 > ```bash
@@ -160,6 +219,8 @@ Replace `<code>` with the code shown in the message.
 | Gateway not running | `openclaw gateway start` |
 | QR expired | Click **Relink** and scan again quickly |
 | Already 4 linked devices | Remove an old device in WhatsApp first |
+| Raw JSON replies | Enable Block Streaming, set Chunk Mode to newline, Reaction Level to minimal |
+| Still broken after settings | `openclaw update` then `openclaw gateway restart` |
 
 ---
 
