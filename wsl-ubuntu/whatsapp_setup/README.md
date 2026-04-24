@@ -31,7 +31,7 @@ If prompted for a token, paste your gateway token. To get it run:
 openclaw config get gateway.auth.token
 ```
 
-![OpenClaw dashboard in browser](screenshots/dashboard.png)
+![OpenClaw dashboard in browser](screenshots/installation_24.png)
 
 ---
 
