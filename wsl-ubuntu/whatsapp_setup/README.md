@@ -39,7 +39,7 @@ openclaw config get gateway.auth.token
 
 In the dashboard, click **Channels** in the left sidebar.
 
-![Channels section in dashboard](screenshots/installation_25.png)
+![Channels section in dashboard](screenshots/)
 
 ---
 
