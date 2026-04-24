@@ -47,7 +47,7 @@ In the dashboard, click **Channels** in the left sidebar.
 
 Find **WhatsApp** in the channel list and click **Configure**.
 
-![WhatsApp channel in the list](screenshots/whatsapp_channel.png)
+![WhatsApp channel in the list](screenshots/installation_26.png)
 
 ---
 
