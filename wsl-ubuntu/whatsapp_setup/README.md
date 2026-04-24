@@ -3,27 +3,36 @@
 This guide walks you through linking your WhatsApp account to OpenClaw so your agent can send and receive WhatsApp messages.
 
 > **Before you start**
-> - OpenClaw must already be installed and the dashboard must be open in your browser.
+> - OpenClaw must already be installed and running.
 > - You need a WhatsApp account on your phone.
+> - **Node.js 22 or higher** is required. Check with: `node --version`
 > - Recommended: use a secondary phone number or eSIM — not your main personal number.
 
 ---
 
 ## Step 1: Open the OpenClaw Dashboard
 
-Run this command in your Ubuntu terminal to open the dashboard:
+First make sure the gateway is running:
+
+```bash
+openclaw gateway start
+```
+
+![openclaw gateway start command](screenshots/installation_23.png)
+
+Then open the dashboard:
 
 ```bash
 openclaw dashboard
 ```
 
-![openclaw dashboard command in terminal](screenshots/installation_23.png)
+![openclaw dashboard command in terminal](screenshots/installation_23b.png)
 
-This opens the dashboard in your browser automatically. If it does not open, go to:
-
-```
-http://127.0.0.1:18789/
-```
+> **WSL Note**
+> On WSL the browser may not open automatically. If nothing opens, go to your browser manually and visit:
+> ```
+> http://127.0.0.1:18789/
+> ```
 
 If prompted for a token, paste your gateway token. To get it run:
 
@@ -80,15 +89,24 @@ openclaw gateway stop
 openclaw gateway start
 ```
 
+> **Wait a few seconds** after the gateway restarts before clicking Show QR. If you click too early you may get a "login provider not available" error.
+
 ---
 
-## Step 5: Link WhatsApp — via Dashboard
+> **Check before continuing**
+> If your WhatsApp already has 4 linked devices, go to **WhatsApp → Settings → Linked Devices** on your phone and remove one before scanning the QR code. WhatsApp allows a maximum of 4 linked devices.
+
+---
+
+## Step 5a: Link WhatsApp — via Dashboard
 
 Once the gateway is back up, go to your browser:
 
 1. Refresh the dashboard page.
 2. Go to **Channels** → **WhatsApp**.
 3. Click **Show QR**.
+
+> **QR codes expire in about 20 seconds.** Have your phone ready and open before clicking Show QR.
 
 ![WhatsApp channel — Show QR button](screenshots/installation_29.png)
 
@@ -110,9 +128,9 @@ Connected: Yes
 
 ---
 
-## Step 5 (Alternative): Link WhatsApp — via Terminal
+## Step 5b: Link WhatsApp — via Terminal (Alternative)
 
-If the dashboard QR does not work, you can scan directly from the terminal instead:
+If the dashboard QR does not work, scan directly from the terminal instead:
 
 ```bash
 openclaw channels login --channel whatsapp
@@ -193,15 +211,15 @@ openclaw gateway restart
 
 ## Step 9: Approve the Pairing Code (First DM)
 
-The first time someone new messages your agent, OpenClaw sends a **pairing code** for security. To approve it, run:
+The first time someone new messages your agent, OpenClaw sends back a **pairing code** — this code appears as a WhatsApp reply message to the sender, and also in your terminal logs. To approve it, run:
 
 ```bash
 openclaw pairing approve whatsapp <code>
 ```
 
-Replace `<code>` with the code shown in the message.
+Replace `<code>` with the code from the WhatsApp reply or terminal output.
 
-![Pairing code approval in terminal](screenshots/installation_41.png)
+![Pairing code in WhatsApp reply and terminal logs](screenshots/installation_41.png)
 
 > To allow anyone to message without a pairing code (open mode):
 > ```bash
@@ -219,6 +237,7 @@ Replace `<code>` with the code shown in the message.
 | Gateway not running | `openclaw gateway start` |
 | QR expired | Click **Relink** and scan again quickly |
 | Already 4 linked devices | Remove an old device in WhatsApp first |
+| web login provider is not available | Run `openclaw channels add --channel whatsapp` then restart gateway |
 | Raw JSON replies | Enable Block Streaming, set Chunk Mode to newline, Reaction Level to minimal |
 | Still broken after settings | `openclaw update` then `openclaw gateway restart` |
 
@@ -238,7 +257,13 @@ openclaw channels login --channel whatsapp
 openclaw gateway status
 ```
 
-If stopped, restart it:
+If the gateway was never started, start it:
+
+```bash
+openclaw gateway start
+```
+
+If it was running before but stopped, restart it:
 
 ```bash
 openclaw gateway restart
