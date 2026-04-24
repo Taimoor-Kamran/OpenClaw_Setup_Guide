@@ -53,17 +53,30 @@ Find **WhatsApp** in the channel list and click **Configure**.
 
 ## Step 4: Scan the QR Code
 
-OpenClaw generates a QR code. Open WhatsApp on your phone and link it:
+OpenClaw shows a QR code on your laptop screen. Now link it from your phone.
 
-1. Open WhatsApp on your phone.
-2. Tap the **three dots** menu (Android) or **Settings** (iPhone).
+**On your laptop** — the QR code will appear in the dashboard like this:
+
+![QR code shown in OpenClaw dashboard on laptop](screenshots/installation_27.png)
+
+**On your phone** — follow these steps:
+
+1. Open **WhatsApp** on your phone.
+2. Tap the **three dots** menu (Android) or go to **Settings** (iPhone).
+
+   ![WhatsApp three dots menu](screenshots/installation_28.png)
+
 3. Tap **Linked Devices**.
+
+   ![Linked Devices option](screenshots/installation_29.png)
+
 4. Tap **Link a Device**.
-5. Scan the QR code shown in the OpenClaw dashboard.
 
-![QR code shown in OpenClaw dashboard](screenshots/qr_code.png)
+   ![Link a Device button](screenshots/installation_30.png)
 
-![Scanning QR code from WhatsApp on phone](screenshots/qr_scan.png)
+5. Point your phone camera at the QR code on your laptop screen to scan it.
+
+   ![Scanning the QR code with phone camera](screenshots/installation_31.png)
 
 ---
 
