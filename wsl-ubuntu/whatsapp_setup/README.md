@@ -43,27 +43,59 @@ In the dashboard, click **Channels** in the left sidebar.
 
 ---
 
-## Step 3: Select WhatsApp
+## Step 3: Install the WhatsApp Plugin
 
-Find **WhatsApp** in the channel list and click **Configure**.
+In your Ubuntu terminal, run:
 
-![WhatsApp channel in the list](screenshots/)
+```bash
+openclaw channels add --channel whatsapp
+```
+
+![openclaw channels add --channel whatsapp command](screenshots/installation_26.png)
+
+OpenClaw will prompt you to install the `@openclaw/whatsapp` plugin. Confirm the install.
+
+![Plugin install confirmation prompt](screenshots/installation_27.png)
 
 ---
 
-## Step 4: Scan the QR Code
+## Step 4: Restart the Gateway
 
-OpenClaw shows a QR code in the dashboard. Scan it with WhatsApp on your phone to link the account.
+After the plugin installs, restart the gateway:
 
-![QR code shown in OpenClaw dashboard](screenshots/installation_26.png)
+```bash
+openclaw gateway restart
+```
+
+![openclaw gateway restart command](screenshots/installation_28.png)
+
+Or stop and start it manually:
+
+```bash
+openclaw gateway stop
+openclaw gateway start
+```
 
 ---
 
-## Step 5: Wait for Connection
+## Step 5: Link WhatsApp via QR Code
 
-After scanning, WhatsApp shows **Device linked** and the dashboard updates to show WhatsApp as **connected**.
+Once the gateway is back up:
 
-![WhatsApp connected status in dashboard](screenshots/connected.png)
+1. Go to your dashboard → **Channels** → **WhatsApp**.
+2. Click **Show QR**.
+
+![WhatsApp channel showing Show QR button](screenshots/installation_29.png)
+
+3. A QR code appears on your screen.
+
+![QR code displayed in dashboard](screenshots/installation_30.png)
+
+4. On your phone: open **WhatsApp** → **Settings** → **Linked Devices** → **Link a Device** → scan the QR code.
+
+The status changes to **Linked: Yes** and **Running: Yes**.
+
+![WhatsApp linked and running status in dashboard](screenshots/installation_31.png)
 
 ---
 
