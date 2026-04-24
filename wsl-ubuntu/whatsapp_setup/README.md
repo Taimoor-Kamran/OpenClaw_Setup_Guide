@@ -26,7 +26,7 @@ Then open the dashboard:
 openclaw dashboard
 ```
 
-![openclaw dashboard command in terminal](screenshots/installation_23b.png)
+![openclaw dashboard command in terminal](screenshots/installation_23.png)
 
 > **WSL Note**
 > On WSL the browser may not open automatically. If nothing opens, go to your browser manually and visit:
