@@ -47,23 +47,49 @@ In the dashboard, click **Channels** in the left sidebar.
 
 Find **WhatsApp** in the channel list and click **Configure**.
 
-![WhatsApp channel in the list](screenshots/)
+![WhatsApp channel in the list](screenshots/installation_26.png)
 
 ---
 
-## Step 4: Scan the QR Code
+## Step 4: WhatsApp Configuration Page
 
-OpenClaw shows a QR code in the dashboard. Scan it with WhatsApp on your phone to link the account.
+After clicking Configure, the WhatsApp setup page opens in the dashboard.
 
-![QR code shown in OpenClaw dashboard](screenshots/installation_26.png)
+![WhatsApp configuration page](screenshots/installation_27.png)
 
 ---
 
-## Step 5: Wait for Connection
+## Step 5: Click "Link WhatsApp"
 
-After scanning, WhatsApp shows **Device linked** and the dashboard updates to show WhatsApp as **connected**.
+Click the **Link WhatsApp** button (or **Connect** / **QR Login** — the label depends on your OpenClaw version).
 
-![WhatsApp connected status in dashboard](screenshots/connected.png)
+![Link WhatsApp button in dashboard](screenshots/installation_28.png)
+
+---
+
+## Step 6: QR Code Appears on Screen
+
+OpenClaw generates and displays a QR code on your laptop screen.
+
+![QR code displayed in OpenClaw dashboard](screenshots/installation_29.png)
+
+> **QR code expires in ~60 seconds.** If it expires before you scan it, click **Refresh** or reload the page to get a new one.
+
+---
+
+## Step 7: Scan the QR Code with Your Phone
+
+Open WhatsApp on your phone and scan the QR code shown on your laptop screen. After scanning, the dashboard updates automatically.
+
+![QR code being scanned — dashboard waiting for scan](screenshots/installation_30.png)
+
+---
+
+## Step 8: WhatsApp Linked Successfully
+
+Once scanned, the dashboard shows WhatsApp status as **Connected**.
+
+![WhatsApp connected status in dashboard](screenshots/installation_31.png)
 
 ---
 
