@@ -169,7 +169,7 @@ If you haven't copied it yet, go to:
 
 Now restart the gateway:
 
-- bashopenclaw gateway stop
+- openclaw gateway stop
 - openclaw gateway run
 
 
