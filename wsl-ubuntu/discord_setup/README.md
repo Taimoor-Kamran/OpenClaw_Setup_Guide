@@ -168,8 +168,9 @@ If you haven't copied it yet, go to:
 ![openclaw channels add --channel discord command in terminal](screenshots/discord_30.png)
 
 Now restart the gateway:
-bashopenclaw gateway stop
-openclaw gateway run
+
+- bashopenclaw gateway stop
+- openclaw gateway run
 
 
 ---
