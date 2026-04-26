@@ -134,6 +134,8 @@ Click **Channels** in the left sidebar.
 
 Find **Discord** and click **Configure**.
 
+![Discord — Configure button](screenshots/discord_26.png)
+
 Paste your bot token in the **Token** field.
 
 ![Bot token pasted in Token field](screenshots/discord_27.png)
