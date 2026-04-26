@@ -134,11 +134,19 @@ Click **Channels** in the left sidebar.
 
 Find **Discord** and click **Configure**.
 
-![Discord — Configure button](screenshots/discord_26.png)
-
 Paste your bot token in the **Token** field.
 
 ![Bot token pasted in Token field](screenshots/discord_27.png)
+
+Also while you're there, enable these two intents by toggling them ON:
+
+**Discord Guild Members Intent**
+
+![Discord Guild Members Intent toggled ON](screenshots/discord_27a.png)
+
+**Discord Presence Intent**
+
+![Discord Presence Intent toggled ON](screenshots/discord_27b.png)
 
 Click **Save**.
 
