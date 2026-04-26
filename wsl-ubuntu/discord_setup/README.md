@@ -12,70 +12,137 @@ This guide walks you through creating a Discord bot and connecting it to OpenCla
 
 ## Step 1: Create a Discord Application
 
-1. Go to https://discord.com/developers/applications
-2. Click **New Application** in the top right.
-3. Give your application a name (example: "My OpenClaw Bot").
-4. Click **Create**.
+Go to https://discord.com/developers/applications
 
-![Discord Developer Portal — New Application](screenshots/discord_1.png)
+![Discord Developer Portal homepage](screenshots/discord_1.png)
+
+Click **New Application** in the top right.
+
+![New Application button highlighted](screenshots/discord_2.png)
+
+Give your application a name (example: "My OpenClaw Bot") and click **Create**.
+
+![Application name entered and Create button](screenshots/discord_3.png)
+
+![New application created — overview page](screenshots/discord_4.png)
 
 ---
 
 ## Step 2: Create a Bot User
 
-1. In the left sidebar, click **Bot**.
-2. Click **Add Bot** then confirm by clicking **Yes, do it!**
-3. Under **Token**, click **Reset Token** then **Copy** to copy your bot token.
+In the left sidebar, click **Bot**.
+
+![Bot option selected in left sidebar](screenshots/discord_5.png)
+
+Click **Add Bot**.
+
+![Add Bot button](screenshots/discord_6.png)
+
+A confirmation dialog appears. Click **Yes, do it!**
+
+![Yes do it confirmation dialog](screenshots/discord_7.png)
+
+Under **Token**, click **Reset Token**.
+
+![Reset Token button](screenshots/discord_8.png)
+
+Click **Yes, do it!** again to confirm, then click **Copy** to copy your bot token. Save it somewhere safe — you will need it in Step 4.
 
 > ⚠️ **Keep your token secret!** Never share it or commit it to GitHub. If leaked, reset it immediately.
 
-![Bot page — Reset Token and Copy](screenshots/discord_2.png)
+![Token copied](screenshots/discord_9.png)
 
-4. Scroll down to **Privileged Gateway Intents** and enable all three:
-   - **Presence Intent**
-   - **Server Members Intent**
-   - **Message Content Intent**
-5. Click **Save Changes**.
+Scroll down to **Privileged Gateway Intents**.
 
-![Privileged Gateway Intents enabled](screenshots/discord_3.png)
+![Privileged Gateway Intents section](screenshots/discord_10.png)
+
+Enable **Presence Intent**.
+
+![Presence Intent toggled ON](screenshots/discord_11.png)
+
+Enable **Server Members Intent**.
+
+![Server Members Intent toggled ON](screenshots/discord_12.png)
+
+Enable **Message Content Intent**.
+
+![Message Content Intent toggled ON](screenshots/discord_13.png)
+
+Click **Save Changes**.
+
+![Save Changes button clicked](screenshots/discord_14.png)
 
 ---
 
 ## Step 3: Invite the Bot to Your Server
 
-1. In the left sidebar, click **OAuth2** → **URL Generator**.
-2. Under **Scopes**, check:
-   - `bot`
-   - `applications.commands`
-3. Under **Bot Permissions**, check:
-   - `Send Messages`
-   - `Read Message History`
-   - `View Channels`
-   - `Use Slash Commands`
-4. Copy the generated URL at the bottom and open it in your browser.
-5. Select your server and click **Authorize**.
+In the left sidebar, click **OAuth2**, then click **URL Generator**.
 
-![OAuth2 URL Generator with scopes and permissions](screenshots/discord_4.png)
+![OAuth2 URL Generator in left sidebar](screenshots/discord_15.png)
 
-![Bot authorization screen](screenshots/discord_5.png)
+Under **Scopes**, check `bot`.
+
+![bot scope checked](screenshots/discord_16.png)
+
+Also check `applications.commands`.
+
+![applications.commands scope checked](screenshots/discord_17.png)
+
+Under **Bot Permissions**, check:
+- `Send Messages`
+- `Read Message History`
+- `View Channels`
+- `Use Slash Commands`
+
+![Bot permissions checked](screenshots/discord_18.png)
+
+Scroll to the bottom and copy the generated URL.
+
+![Generated invite URL at the bottom](screenshots/discord_19.png)
+
+Open the URL in your browser. Select your server from the dropdown.
+
+![Bot invite page — server selected](screenshots/discord_20.png)
+
+Click **Authorize**.
+
+![Authorize button clicked](screenshots/discord_21.png)
+
+Complete the CAPTCHA if prompted. You will see a confirmation that the bot was authorized.
+
+![Bot authorized successfully](screenshots/discord_22.png)
 
 ---
 
 ## Step 4: Add the Discord Channel — via Dashboard
 
-1. Make sure the gateway is running:
+Make sure the gateway is running:
 
 ```bash
 openclaw gateway run
 ```
 
-2. Open the dashboard in your browser at `http://127.0.0.1:18789/`
-3. Click **Channels** in the left sidebar.
-4. Find **Discord** and click **Configure**.
-5. Paste your bot token in the **Token** field.
-6. Click **Save**.
+![openclaw gateway run command](screenshots/discord_23.png)
 
-![Discord channel configuration in dashboard](screenshots/discord_6.png)
+Open your browser and go to `http://127.0.0.1:18789/`
+
+![OpenClaw dashboard open in browser](screenshots/discord_24.png)
+
+Click **Channels** in the left sidebar.
+
+![Channels section in dashboard](screenshots/discord_25.png)
+
+Find **Discord** and click **Configure**.
+
+![Discord — Configure button](screenshots/discord_26.png)
+
+Paste your bot token in the **Token** field.
+
+![Bot token pasted in Token field](screenshots/discord_27.png)
+
+Click **Save**.
+
+![Save button clicked](screenshots/discord_28.png)
 
 ---
 
@@ -87,9 +154,11 @@ If you prefer the terminal, run:
 openclaw channels add --channel discord
 ```
 
+![openclaw channels add --channel discord command](screenshots/discord_29.png)
+
 When prompted, paste your bot token and press Enter.
 
-![openclaw channels add --channel discord command](screenshots/discord_7.png)
+![Token entered in terminal prompt](screenshots/discord_30.png)
 
 ---
 
@@ -99,60 +168,101 @@ After adding the channel, restart the gateway so it picks up Discord:
 
 ```bash
 openclaw gateway stop
+```
+
+![openclaw gateway stop command](screenshots/discord_31.png)
+
+```bash
 openclaw gateway run
 ```
 
-> Wait a few seconds after restart before testing.
+![openclaw gateway run command](screenshots/discord_32.png)
 
-![Gateway restart command](screenshots/discord_8.png)
+> Wait a few seconds after restart before testing.
 
 ---
 
 ## Step 6: Allow Your Discord User ID
 
-Before testing, add your Discord user ID to the **Allow From** list.
+Before testing, add your Discord user ID to the **Allow From** list so the bot accepts your messages.
 
 **How to get your Discord user ID:**
-1. Open Discord.
-2. Go to **Settings** → **Advanced** → enable **Developer Mode**.
-3. Right-click your username anywhere and click **Copy User ID**.
 
-Then in the dashboard:
-1. Go to **Channels** → **Discord**.
-2. Find **Allow From** and click **Add**.
-3. Paste your user ID.
-4. Click **Save**.
+Open Discord and go to **Settings**.
 
-![Allow From section with Discord user ID added](screenshots/discord_9.png)
+![Discord Settings](screenshots/discord_33.png)
+
+Click **Advanced**.
+
+![Advanced settings tab](screenshots/discord_34.png)
+
+Enable **Developer Mode**.
+
+![Developer Mode toggled ON](screenshots/discord_35.png)
+
+Go back to any server. Right-click your username and click **Copy User ID**.
+
+![Right-click menu — Copy User ID](screenshots/discord_36.png)
+
+Now go back to the dashboard. Click **Channels** → **Discord**.
+
+![Channels → Discord in dashboard](screenshots/discord_37.png)
+
+Find the **Allow From** section and click **Add**.
+
+![Allow From — Add button](screenshots/discord_38.png)
+
+Paste your Discord user ID and click **Save**.
+
+![User ID entered and Save clicked](screenshots/discord_39.png)
 
 ---
 
 ## Step 7: Test the Bot
 
-1. Open Discord and go to your server.
-2. Send a message in any channel where the bot has access:
+Open Discord and go to your server. Send a message in any channel where the bot has access:
+
+```
 hello
+```
 
-or mention the bot directly:
+![Sending hello message in Discord](screenshots/discord_40.png)
+
+Or mention the bot directly:
+
+```
 @YourBotName what can you do?
+```
 
-The bot should reply!
+The bot should reply.
 
-![Bot replying in Discord server](screenshots/discord_10.png)
+![Bot reply in Discord](screenshots/discord_41.png)
 
 ---
 
 ## Step 8: Fix Raw JSON Replies (If Needed)
 
-If the bot replies with raw JSON instead of normal text, fix it from the dashboard:
+If the bot replies with raw JSON instead of normal text, fix it from the dashboard.
 
-1. Go to **Channels** → **Discord**.
-2. Enable **Block Streaming** — toggle it **ON**.
-3. Set **Chunk Mode** to `newline`.
-4. Set **Reaction Level** to `minimal`.
-5. Click **Save**.
+Go to **Channels** → **Discord**.
 
-![Block Streaming and Chunk Mode settings](screenshots/discord_11.png)
+![Channels → Discord in dashboard](screenshots/discord_42.png)
+
+Enable **Block Streaming** — toggle it **ON**.
+
+![Block Streaming toggled ON](screenshots/discord_43.png)
+
+Set **Chunk Mode** to `newline`.
+
+![Chunk Mode set to newline](screenshots/discord_44.png)
+
+Set **Reaction Level** to `minimal`.
+
+![Reaction Level set to minimal](screenshots/discord_45.png)
+
+Click **Save**.
+
+![Save button clicked](screenshots/discord_46.png)
 
 ---
 
