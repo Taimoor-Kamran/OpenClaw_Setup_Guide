@@ -154,17 +154,18 @@ Click **Save**.
 
 ## Step 4 (Alternative): Add the Discord Channel — via CLI
 
-If you prefer the terminal, run:
-
 ```bash
-openclaw channels add --channel discord
+openclaw channels add --channel discord --token YOUR_BOT_TOKEN_HERE
 ```
 
-![openclaw channels add --channel discord command](screenshots/discord_30.png)
+Replace `YOUR_BOT_TOKEN_HERE` with the token you copied from the Discord Developer Portal.
 
-When prompted, paste your bot token and press Enter.
+If you haven't copied it yet, go to:
+- https://discord.com/developers/applications
+- Select your app → **Bot**
+- Click **Reset Token** → copy it
 
-![Token entered in terminal prompt](screenshots/discord_31.png)
+![openclaw channels add --channel discord command in terminal](screenshots/discord_30.png)
 
 ---
 
@@ -176,13 +177,13 @@ After adding the channel, restart the gateway so it picks up Discord:
 openclaw gateway stop
 ```
 
-![openclaw gateway stop command](screenshots/discord_32.png)
+![openclaw gateway stop command](screenshots/discord_31.png)
 
 ```bash
 openclaw gateway run
 ```
 
-![openclaw gateway run command](screenshots/discord_33.png)
+![openclaw gateway run command](screenshots/discord_32.png)
 
 > Wait a few seconds after restart before testing.
 
@@ -196,31 +197,31 @@ Before testing, add your Discord user ID to the **Allow From** list so the bot a
 
 Open Discord and go to **Settings**.
 
-![Discord Settings](screenshots/discord_34.png)
+![Discord Settings](screenshots/discord_33.png)
 
 Click **Advanced**.
 
-![Advanced settings tab](screenshots/discord_35.png)
+![Advanced settings tab](screenshots/discord_34.png)
 
 Enable **Developer Mode**.
 
-![Developer Mode toggled ON](screenshots/discord_36.png)
+![Developer Mode toggled ON](screenshots/discord_35.png)
 
 Go back to any server. Right-click your username and click **Copy User ID**.
 
-![Right-click menu — Copy User ID](screenshots/discord_37.png)
+![Right-click menu — Copy User ID](screenshots/discord_36.png)
 
 Now go back to the dashboard. Click **Channels** → **Discord**.
 
-![Channels → Discord in dashboard](screenshots/discord_38.png)
+![Channels → Discord in dashboard](screenshots/discord_37.png)
 
 Find the **Allow From** section and click **Add**.
 
-![Allow From — Add button](screenshots/discord_39.png)
+![Allow From — Add button](screenshots/discord_38.png)
 
 Paste your Discord user ID and click **Save**.
 
-![User ID entered and Save clicked](screenshots/discord_40.png)
+![User ID entered and Save clicked](screenshots/discord_39.png)
 
 ---
 
@@ -232,7 +233,7 @@ Open Discord and go to your server. Send a message in any channel where the bot 
 hello
 ```
 
-![Sending hello message in Discord](screenshots/discord_41.png)
+![Sending hello message in Discord](screenshots/discord_40.png)
 
 Or mention the bot directly:
 
@@ -242,7 +243,7 @@ Or mention the bot directly:
 
 The bot should reply.
 
-![Bot reply in Discord](screenshots/discord_42.png)
+![Bot reply in Discord](screenshots/discord_41.png)
 
 ---
 
@@ -252,23 +253,23 @@ If the bot replies with raw JSON instead of normal text, fix it from the dashboa
 
 Go to **Channels** → **Discord**.
 
-![Channels → Discord in dashboard](screenshots/discord_43.png)
+![Channels → Discord in dashboard](screenshots/discord_42.png)
 
 Enable **Block Streaming** — toggle it **ON**.
 
-![Block Streaming toggled ON](screenshots/discord_44.png)
+![Block Streaming toggled ON](screenshots/discord_43.png)
 
 Set **Chunk Mode** to `newline`.
 
-![Chunk Mode set to newline](screenshots/discord_45.png)
+![Chunk Mode set to newline](screenshots/discord_44.png)
 
 Set **Reaction Level** to `minimal`.
 
-![Reaction Level set to minimal](screenshots/discord_46.png)
+![Reaction Level set to minimal](screenshots/discord_45.png)
 
 Click **Save**.
 
-![Save button clicked](screenshots/discord_47.png)
+![Save button clicked](screenshots/discord_46.png)
 
 ---
 
