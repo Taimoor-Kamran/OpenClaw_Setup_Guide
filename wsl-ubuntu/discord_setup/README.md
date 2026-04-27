@@ -238,23 +238,45 @@ Paste your Discord user ID and click **Save**.
 
 ## Step 7: Test the Bot
 
-Open Discord and go to your server. Send a message in any channel where the bot has access:
+Your Discord bot is now connected to OpenClaw. When you send a message in Discord, OpenClaw receives it and replies using Claude AI.
+
+**1. Open your Discord server**
+
+Go to the server where you invited the bot in Step 3.
+
+![Discord server](screenshots/discord_40.png)
+
+**2. Find a text channel**
+
+Click any text channel like `#general`.
+
+![Text channel selected](screenshots/discord_41.png)
+
+**3. Check the bot is online**
+
+Look at the member list on the right — your bot should show as online (green dot).
+
+![Bot showing online in member list](screenshots/discord_42.png)
+
+**4. Send a message**
+
+Type in the chat:
 
 ```
 hello
 ```
 
-![Sending hello message in Discord](screenshots/discord_40.png)
+and press Enter.
 
-Or mention the bot directly:
+![hello message sent in Discord](screenshots/discord_43.png)
+
+**5. The bot should reply with something like:**
 
 ```
-@YourBotName what can you do?
+Hello! I'm your OpenClaw AI assistant. How can I help you?
 ```
 
-The bot should reply.
-
-![Bot reply in Discord](screenshots/discord_41.png)
+![Bot reply in Discord](screenshots/discord_44.png)
 
 ---
 
@@ -264,23 +286,23 @@ If the bot replies with raw JSON instead of normal text, fix it from the dashboa
 
 Go to **Channels** → **Discord**.
 
-![Channels → Discord in dashboard](screenshots/discord_42.png)
+![Channels → Discord in dashboard](screenshots/discord_45.png)
 
 Enable **Block Streaming** — toggle it **ON**.
 
-![Block Streaming toggled ON](screenshots/discord_43.png)
+![Block Streaming toggled ON](screenshots/discord_46.png)
 
 Set **Chunk Mode** to `newline`.
 
-![Chunk Mode set to newline](screenshots/discord_44.png)
+![Chunk Mode set to newline](screenshots/discord_47.png)
 
 Set **Reaction Level** to `minimal`.
 
-![Reaction Level set to minimal](screenshots/discord_45.png)
+![Reaction Level set to minimal](screenshots/discord_48.png)
 
 Click **Save**.
 
-![Save button clicked](screenshots/discord_46.png)
+![Save button clicked](screenshots/discord_49.png)
 
 ---
 
