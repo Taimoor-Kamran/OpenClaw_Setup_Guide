@@ -213,7 +213,12 @@ Enable **Developer Mode**.
 
 ![Developer Mode toggled ON](screenshots/discord_35.png)
 
-Go back to any server. Right-click your username and click **Copy User ID**.
+- Close settings
+- Look at the bottom left corner — your username is there
+- Right-click your username in the bottom left
+- Click "Copy User ID"
+
+
 
 ![Right-click menu — Copy User ID](screenshots/discord_36.png)
 
