@@ -121,7 +121,7 @@ Select **Anthropic**, then select **Anthropic Claude CLI**.
 
 ![Model provider — Anthropic selected](screenshots/installation_8.png)
 
-![Auth method — Claude CLI selected](screenshots/installation_9.png)
+![Auth method — Claude CLI selected](screenshots/installatio_9.png)
 
 ![Model configured confirmation](screenshots/installation_10.png)
 
