@@ -117,7 +117,15 @@ Select **Update values**.
 
 ### 5d — Model / Auth Provider
 
-Select **Anthropic**, then select **Anthropic Claude CLI**.
+Select **Anthropic**, then select **Anthropic API Key**.
+
+### Get a free Anthropic API key:
+
+- Go to https://console.anthropic.com/settings/keys
+- Click Create Key
+- Copy the key
+
+
 
 ![Model provider — Anthropic selected](screenshots/installation_8.png)
 
