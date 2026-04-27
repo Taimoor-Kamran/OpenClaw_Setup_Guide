@@ -216,7 +216,7 @@ Enable **Developer Mode**.
 - Close settings
 - Look at the bottom left corner — your username is there
 - Right-click your username in the bottom left
-- Click "Copy User ID"
+- Click **Copy User ID**
 
 
 
