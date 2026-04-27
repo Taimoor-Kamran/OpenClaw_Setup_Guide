@@ -201,11 +201,11 @@ Before testing, add your Discord user ID to the **Allow From** list so the bot a
 
 **How to get your Discord user ID:**
 
-Open Discord and go to **Settings**.
+Open Discord and go to **Home Page**.
 
 ![Discord Settings](screenshots/discord_33.png)
 
-Click **Advanced**.
+Click **Setting Icon **.
 
 ![Advanced settings tab](screenshots/discord_34.png)
 
