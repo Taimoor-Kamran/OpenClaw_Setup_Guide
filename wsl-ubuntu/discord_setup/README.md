@@ -10,299 +10,210 @@ This guide walks you through creating a Discord bot and connecting it to OpenCla
 
 ---
 
-## Step 1: Create a Discord Application
+Run the channel wizard and select **Discord (Bot API)**.
+
+```bash
+openclaw configure --section channels
+```
+
+![Select Discord Bot API in wizard](screenshots/discord_1.png)
+
+The wizard needs three things: a **server name (guild)**, a **channel name**, and a **bot token**. You will create the server and channel first, then create the bot.
+
+---
+
+## Step 1: Create a Discord Server
+
+If you already have a server you want to use, skip to Step 2.
+
+Open Discord and click the **+** icon on the left sidebar.
+
+![Plus icon on Discord left sidebar](screenshots/discord_2.png)
+
+Select **Create My Own**.
+
+![Create My Own option](screenshots/discord_3.png)
+
+Choose **For me and my friends** (or any option — it does not matter for this setup).
+
+![For me and my friends selected](screenshots/discord_4.png)
+
+Give your server a name (example: `AI Office`) and click **Create**.
+
+![Server name entered and Create button](screenshots/discord_5.png)
+
+![Server created](screenshots/discord_6.png)
+
+> Remember this name — the wizard will ask for it.
+
+---
+
+## Step 2: Create a Channel
+
+Your server comes with a `#general` channel by default. You can use that, or create a dedicated channel.
+
+Click the **+** next to **Text Channels** in your server.
+
+![Plus next to Text Channels](screenshots/discord_7.png)
+
+Select **Text Channel**.
+
+![Text Channel selected](screenshots/discord_8.png)
+
+Name it (example: `ai-employee`) and click **Create Channel**.
+
+![Channel name entered and Create Channel button](screenshots/discord_9.png)
+
+![Channel created in server](screenshots/discord_10.png)
+
+> Remember this channel name. If you are using the default, the channel name is `general`.
+
+---
+
+## Step 3: Enable Developer Mode
+
+Open **User Settings** by clicking the gear icon near your name at the bottom left.
+
+![Gear icon — User Settings](screenshots/discord_11.png)
+
+Scroll down and click **Advanced**.
+
+![Advanced section in settings](screenshots/discord_12.png)
+
+Toggle **Developer Mode** to **ON**.
+
+![Developer Mode toggled ON](screenshots/discord_13.png)
+
+---
+
+## Step 4: Create the Bot and Get the Token
 
 Go to https://discord.com/developers/applications
 
-![Discord Developer Portal homepage](screenshots/discord_1.png)
+![Discord Developer Portal](screenshots/discord_14.png)
 
-Click **New Application** in the top right.
+Click **New Application** and give it a name (example: `My AI Employee`).
 
-![New Application button highlighted](screenshots/discord_2.png)
+![New Application name entered](screenshots/discord_15.png)
 
-Give your application a name (example: "My OpenClaw Bot") and click **Create**.
+Click **Create**.
 
-![Application name entered and Create button](screenshots/discord_3.png)
-
-![New application created — overview page](screenshots/discord_4.png)
-
----
-
-## Step 2: Create a Bot User
+![Create button clicked](screenshots/discord_16.png)
 
 In the left sidebar, click **Bot**.
 
-![Bot option selected in left sidebar](screenshots/discord_5.png)
+![Bot in left sidebar](screenshots/discord_17.png)
 
-Click **Add Bot**.
+Find the **Token** section and click **Reset Token**.
 
-![Add Bot button](screenshots/discord_6.png)
+![Reset Token button](screenshots/discord_18.png)
 
-A confirmation dialog appears. Click **Yes, do it!**
+Click **Yes, do it!** to confirm, then click **Copy**.
 
-![Yes do it confirmation dialog](screenshots/discord_7.png)
+> ⚠️ **Keep this token secret.** Never share it or commit it to GitHub. This is the password for your bot.
 
-Under **Token**, click **Reset Token**.
+![Token copied](screenshots/discord_19.png)
 
-![Reset Token button](screenshots/discord_8.png)
+Scroll down to **Privileged Gateway Intents**. Toggle **ON** all three:
 
-Click **Yes, do it!** again to confirm, then click **Copy** to copy your bot token. Save it somewhere safe — you will need it in Step 4.
+**Presence Intent**
 
-> ⚠️ **Keep your token secret!** Never share it or commit it to GitHub. If leaked, reset it immediately.
+![Presence Intent toggled ON](screenshots/discord_20.png)
 
-![Token copied](screenshots/discord_9.png)
+**Server Members Intent**
 
-Scroll down to **Privileged Gateway Intents**.
+![Server Members Intent toggled ON](screenshots/discord_21.png)
 
-![Privileged Gateway Intents section](screenshots/discord_10.png)
+**Message Content Intent** — this is the most important. Without it the bot cannot read your messages.
 
-Enable **Presence Intent**.
-
-![Presence Intent toggled ON](screenshots/discord_11.png)
-
-Enable **Server Members Intent**.
-
-![Server Members Intent toggled ON](screenshots/discord_12.png)
-
-Enable **Message Content Intent**.
-
-![Message Content Intent toggled ON](screenshots/discord_13.png)
+![Message Content Intent toggled ON](screenshots/discord_22.png)
 
 Click **Save Changes**.
 
-![Save Changes button clicked](screenshots/discord_14.png)
+![Save Changes clicked](screenshots/discord_23.png)
 
 ---
 
-## Step 3: Invite the Bot to Your Server
+## Step 5: Invite the Bot to Your Server
 
-In the left sidebar, click **OAuth2**, then click **URL Generator**.
+In the left sidebar, click **OAuth2**, then select **URL Generator**.
 
-![OAuth2 URL Generator in left sidebar](screenshots/discord_15.png)
+![OAuth2 URL Generator](screenshots/discord_24.png)
 
 Under **Scopes**, check `bot`.
 
-![bot scope checked](screenshots/discord_16.png)
-
-Also check `applications.commands`.
-
-![applications.commands scope checked](screenshots/discord_17.png)
+![bot scope checked](screenshots/discord_25.png)
 
 Under **Bot Permissions**, check:
+- `Read Messages / View Channels`
 - `Send Messages`
 - `Read Message History`
-- `View Channels`
-- `Use Slash Commands`
 
-![Bot permissions checked](screenshots/discord_18.png)
+![Bot permissions checked](screenshots/discord_26.png)
 
-Scroll to the bottom and copy the generated URL.
+Copy the URL generated at the bottom.
 
-![Generated invite URL at the bottom](screenshots/discord_19.png)
+![Generated URL copied](screenshots/discord_27.png)
 
-Open the URL in your browser. Select your server from the dropdown.
+Paste it into a new browser tab and follow the prompts to add the bot to your server.
 
-![Bot invite page — server selected](screenshots/discord_20.png)
+![Bot invite page in browser](screenshots/discord_28.png)
 
 Click **Authorize**.
 
-![Authorize button clicked](screenshots/discord_21.png)
-
-Complete the CAPTCHA if prompted. You will see a confirmation that the bot was authorized.
-
-![Bot authorized successfully](screenshots/discord_22.png)
+![Authorize button clicked](screenshots/discord_29.png)
 
 ---
 
-## Step 4: Add the Discord Channel — via Dashboard
+## Step 6: Enter the Details in the Wizard
 
-Make sure the gateway is running:
+Go back to the OpenClaw wizard. It asks for three values:
 
-```bash
-openclaw gateway run
-```
+**Guild (server name)** — enter your server name (example: `AI Office`).
 
-![openclaw gateway run command](screenshots/discord_23.png)
+![Guild server name entered in wizard](screenshots/discord_30.png)
 
-Open your browser and go to `http://127.0.0.1:18789/`
+**Channel** — enter your channel name (default is `general`).
 
-![OpenClaw dashboard open in browser](screenshots/discord_24.png)
+![Channel name entered in wizard](screenshots/discord_31.png)
 
-Click **Channels** in the left sidebar.
+**Bot Token** — paste the token you copied in Step 4.
 
-![Channels section in dashboard](screenshots/discord_25.png)
+![Bot token pasted in wizard](screenshots/discord_32.png)
 
-Paste your bot token in the **Token** field.
+The wizard writes the configuration for you. No manual editing required.
 
-![Bot token pasted in Token field](screenshots/discord_26.png)
-
-Also while you're there, enable these two intents by toggling them ON:
-
-**Discord Guild Members Intent**
-
-![Discord Guild Members Intent toggled ON](screenshots/discord_27.png)
-
-**Discord Presence Intent**
-
-![Discord Presence Intent toggled ON](screenshots/discord_28.png)
-
-Click **Save**.
-
-![Save button clicked](screenshots/discord_29.png)
-
----
-
-## Step 4 (Alternative): Add the Discord Channel — via CLI
-
-```bash
-openclaw channels add --channel discord --token YOUR_BOT_TOKEN_HERE
-```
-
-Replace `YOUR_BOT_TOKEN_HERE` with the token you copied from the Discord Developer Portal.
-
-If you haven't copied it yet, go to:
-- https://discord.com/developers/applications
-- Select your app → **Bot**
-- Click **Reset Token** → copy it
-
-![openclaw channels add --channel discord command in terminal](screenshots/discord_30.png)
-
-Now restart the gateway:
-
-- openclaw gateway stop
-- openclaw gateway run
-
-
----
-
-## Step 5: Restart the Gateway
-
-After adding the channel, restart the gateway so it picks up Discord:
-
-```bash
-openclaw gateway stop
-```
-
-![openclaw gateway stop command](screenshots/discord_31.png)
-
-```bash
-openclaw gateway run
-```
-
-![openclaw gateway run command](screenshots/discord_32.png)
-
-> Wait a few seconds after restart before testing.
-
----
-
-## Step 6: Allow Your Discord User ID
-
-Before testing, add your Discord user ID to the **Allow From** list so the bot accepts your messages.
-
-**How to get your Discord user ID:**
-
-Open Discord and go to **Home Page**.
-
-![Discord Settings](screenshots/discord_33.png)
-
-Click **Setting Icon **.
-
-![Advanced settings tab](screenshots/discord_34.png)
-
-Enable **Developer Mode**.
-
-![Developer Mode toggled ON](screenshots/discord_35.png)
-
-- Close settings
-- Look at the bottom left corner — your username is there
-- Right-click your username in the bottom left
-- Click **Copy User ID**
-
-
-
-![Right-click menu — Copy User ID](screenshots/discord_36.png)
-
-Now go back to the dashboard. Click **Channels** → **Discord**.
-
-![Channels → Discord in dashboard](screenshots/discord_37.png)
-
-Find the **Allow From** section and click **Add**.
-
-![Allow From — Add button](screenshots/discord_38.png)
-
-Paste your Discord user ID and click **Save**.
-
-![User ID entered and Save clicked](screenshots/discord_39.png)
+![Wizard configuration complete](screenshots/discord_33.png)
 
 ---
 
 ## Step 7: Test the Bot
 
-Your Discord bot is now connected to OpenClaw. When you send a message in Discord, OpenClaw receives it and replies using Claude AI.
+> **DM the Bot First — Do Not Message the Channel.**
+>
+> The wizard asked for a server and a channel, so it feels like the bot now lives inside `#ai-employee`. It does not. By default, Discord bots only reply to **direct messages**. If you send "hello" in `#ai-employee` after setup, the bot will stay silent.
 
-**1. Open your Discord server**
+In your server, look at the right-hand member list and click your bot's name.
 
-Go to the server where you invited the bot in Step 3.
+![Bot name in member list](screenshots/discord_34.png)
 
-![Discord server](screenshots/discord_40.png)
+Click **Message** to open a DM.
 
-**2. Find a text channel**
+![Message button to open DM](screenshots/discord_35.png)
 
-Click any text channel like `#general`.
-
-![Text channel selected](screenshots/discord_41.png)
-
-**3. Check the bot is online**
-
-Look at the member list on the right — your bot should show as online (green dot).
-
-![Bot showing online in member list](screenshots/discord_42.png)
-
-**4. Send a message**
-
-Type in the chat:
+Send a message:
 
 ```
 hello
 ```
 
-and press Enter.
+![hello sent in bot DM](screenshots/discord_36.png)
 
-![hello message sent in Discord](screenshots/discord_43.png)
+The bot should reply.
 
-**5. The bot should reply with something like:**
+![Bot reply in DM](screenshots/discord_37.png)
 
-```
-Hello! I'm your OpenClaw AI assistant. How can I help you?
-```
-
-![Bot reply in Discord](screenshots/discord_44.png)
-
----
-
-## Step 8: Fix Raw JSON Replies (If Needed)
-
-If the bot replies with raw JSON instead of normal text, fix it from the dashboard.
-
-Go to **Channels** → **Discord**.
-
-![Channels → Discord in dashboard](screenshots/discord_45.png)
-
-Enable **Block Streaming** — toggle it **ON**.
-
-![Block Streaming toggled ON](screenshots/discord_46.png)
-
-Set **Chunk Mode** to `newline`.
-
-![Chunk Mode set to newline](screenshots/discord_47.png)
-
-Set **Reaction Level** to `minimal`.
-
-![Reaction Level set to minimal](screenshots/discord_48.png)
-
-Click **Save**.
-
-![Save button clicked](screenshots/discord_49.png)
+> To make the bot reply inside a channel, you need to change `groupPolicy` to `open` and `@mention` the bot. For now, use DM.
 
 ---
 
@@ -310,28 +221,26 @@ Click **Save**.
 
 | Issue | Fix |
 |---|---|
-| Bot not appearing in server | Re-invite using OAuth2 URL Generator |
-| Plugin not installed | `openclaw channels add --channel discord` |
+| Bot not in server | Re-invite using OAuth2 URL Generator in Step 5 |
 | Gateway not running | `openclaw gateway run` |
-| Bot not replying | Check Allow From list has your user ID |
-| Raw JSON replies | Enable Block Streaming, set Chunk Mode to newline |
-| Token invalid | Reset token in Discord Developer Portal and update config |
-| Missing intents | Enable all 3 Privileged Gateway Intents in Developer Portal |
+| Bot not replying in channel | Use DM instead — bots reply to DMs by default |
+| Token invalid | Reset token in Developer Portal and re-run wizard |
+| Missing intents | Enable all 3 Privileged Gateway Intents in Step 4 |
+| Bot silent in DM | Check Message Content Intent is ON |
 
 ---
 
 ## Troubleshooting
 
-**Bot is online but not replying** — Check that Message Content Intent is enabled in the Discord Developer Portal. Without it the bot cannot read messages.
+**Bot is online but not reading messages** — Check that **Message Content Intent** is enabled in the Discord Developer Portal.
 
-**Invalid token error in logs** — Reset your token in the Discord Developer Portal and update it:
+**Invalid token error** — Reset your token and re-run the wizard:
 
 ```bash
-openclaw config set channels.discord.token YOUR_NEW_TOKEN
-openclaw gateway restart
+openclaw configure --section channels
 ```
 
-**Bot was removed from server** — Re-invite it using the OAuth2 URL Generator in Step 3.
+**Bot was removed from server** — Re-invite it using the OAuth2 URL Generator in Step 5.
 
 **Gateway never started** — Start it with:
 
