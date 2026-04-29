@@ -147,8 +147,6 @@ Hello! How can I help you today?
 
 ![Bot reply received in WhatsApp](screenshots/whatsapp_22.png)
 
-Now try messaging from a **different number**. Instead of a reply, that number will receive a **pairing code** — this is how OpenClaw protects your agent from unknown senders.
-
 ![Pairing code received from unknown number](screenshots/whatsapp_23.png)
 
 ---
