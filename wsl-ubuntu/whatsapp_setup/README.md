@@ -60,6 +60,10 @@ When asked **Select a channel**, select **WhatsApp (QR link)**.
 
 ![Select a channel — WhatsApp selected](screenshots/whatsapp_7.png)
 
+If WhatsApp is already configured, the wizard asks what you want to do. Select **Modify settings**.
+
+![WhatsApp already configured — Modify settings selected](screenshots/whatsapp_5b.png)
+
 ---
 
 ## Step 6: Install the WhatsApp Plugin
