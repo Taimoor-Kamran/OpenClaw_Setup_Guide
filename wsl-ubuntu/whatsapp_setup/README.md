@@ -99,7 +99,7 @@ WhatsApp asked for a restart after pairing (code 515); waiting for creds to save
 ✅ Linked after restart; web session ready.
 ```
 
-![WhatsApp linked successfully in terminal](screenshots/whatsapp_13.png)
+![WhatsApp linked successfully in terminal](screenshots/whatsapp_13.pngs)
 
 ---
 
@@ -107,7 +107,7 @@ WhatsApp asked for a restart after pairing (code 515); waiting for creds to save
 
 The wizard shows the **WhatsApp DM access** info box explaining DM policies.
 
-![WhatsApp DM access info box](screenshots/whatsapp_14.png)
+![WhatsApp DM access info box](screenshots/whatsapp_14.pngs)
 
 When asked **WhatsApp phone setup**, select **Separate phone just for OpenClaw**.
 
