@@ -129,7 +129,31 @@ The wizard finishes.
 
 ---
 
-## Step 9: Approve the First Message (Pairing)
+## Step 9: Test the Bot
+
+Open WhatsApp on your phone and message the number you linked:
+
+```
+hello
+```
+
+![Sending hello message to the bot](screenshots/whatsapp_21.png)
+
+You will get an automatic reply from your agent, something like:
+
+```
+Hello! How can I help you today?
+```
+
+![Bot reply received in WhatsApp](screenshots/whatsapp_22.png)
+
+Now try messaging from a **different number**. Instead of a reply, that number will receive a **pairing code** — this is how OpenClaw protects your agent from unknown senders.
+
+![Pairing code received from unknown number](screenshots/whatsapp_23.png)
+
+---
+
+## Step 10: Approve the First Message (Pairing)
 
 The first time someone messages your agent, OpenClaw sends them a **pairing code**. You will also see the code in your terminal logs.
 
@@ -141,7 +165,7 @@ openclaw pairing approve whatsapp <code>
 
 Replace `<code>` with the code from the terminal output.
 
-![openclaw pairing approve command](screenshots/whatsapp_21.png)
+![openclaw pairing approve command](screenshots/whatsapp_24.png)
 
 You will see:
 
@@ -149,7 +173,7 @@ You will see:
 Approved whatsapp sender +923XXXXXXXXX.
 ```
 
-![Pairing approved confirmation](screenshots/whatsapp_22.png)
+![Pairing approved confirmation](screenshots/whatsapp_25.png)
 
 That sender can now chat with your agent freely.
 
