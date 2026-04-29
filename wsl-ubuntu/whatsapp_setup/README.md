@@ -145,8 +145,6 @@ You will get an automatic reply from your agent, something like:
 Hello! How can I help you today?
 ```
 
-![Bot reply received in WhatsApp](screenshots/whatsapp_22.png)
-
 ![Pairing code received from unknown number](screenshots/whatsapp_23.png)
 
 ---
