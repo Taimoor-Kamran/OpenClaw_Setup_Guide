@@ -62,43 +62,27 @@ When asked **Select a channel**, select **WhatsApp (QR link)**.
 
 If WhatsApp is already configured, the wizard asks what you want to do. Select **Modify settings**.
 
-![WhatsApp already configured — Modify settings selected](screenshots/whatsapp_5b.png)
+![WhatsApp already configured — Modify settings selected](screenshots/whatsapp_8.png)
 
 If WhatsApp is already linked, the wizard asks if you want to re-link. Select **No** to keep the existing link, or **Yes** to scan a new QR code.
 
-![WhatsApp already linked — Re-link now prompt](screenshots/whatsapp_5c.png)
+![WhatsApp already linked — Re-link now prompt](screenshots/whatsapp_9.png)
 
 ---
 
-## Step 6: Install the WhatsApp Plugin
-
-When asked **Install WhatsApp plugin?**, select **Download from npm (@openclaw/whatsapp)**.
-
-![Install WhatsApp plugin — Download from npm selected](screenshots/whatsapp_8.png)
-
-> **If the install fails** with "Package not found on npm", you will see this error:
-
-![Plugin install failed message](screenshots/whatsapp_9.png)
-
-When asked **Use local plugin path instead?**, select **Yes**.
-
-![Use local plugin path — Yes selected](screenshots/whatsapp_10.png)
-
----
-
-## Step 7: Link Your WhatsApp
+## Step 6: Link Your WhatsApp
 
 The wizard shows a linking info box. Read it, then continue.
 
-![WhatsApp linking info box](screenshots/whatsapp_11.png)
+![WhatsApp linking info box](screenshots/whatsapp_10.png)
 
 When asked **Link WhatsApp now (QR)?**, select **Yes**.
 
-![Link WhatsApp now — Yes selected](screenshots/whatsapp_12.png)
+![Link WhatsApp now — Yes selected](screenshots/whatsapp_11.png)
 
 A QR code appears in the terminal.
 
-![QR code displayed in terminal](screenshots/whatsapp_13.png)
+![QR code displayed in terminal](screenshots/whatsapp_12.png)
 
 > **The QR code refreshes every ~20 seconds.** Have your phone ready before selecting Yes.
 
@@ -115,51 +99,51 @@ WhatsApp asked for a restart after pairing (code 515); waiting for creds to save
 ✅ Linked after restart; web session ready.
 ```
 
-![WhatsApp linked successfully in terminal](screenshots/whatsapp_14.png)
+![WhatsApp linked successfully in terminal](screenshots/whatsapp_13.png)
 
 ---
 
-## Step 8: Configure DM Settings
+## Step 7: Configure DM Settings
 
 The wizard shows the **WhatsApp DM access** info box explaining DM policies.
 
-![WhatsApp DM access info box](screenshots/whatsapp_15.png)
+![WhatsApp DM access info box](screenshots/whatsapp_14.png)
 
 When asked **WhatsApp phone setup**, select **Separate phone just for OpenClaw**.
 
-![Phone setup — Separate phone selected](screenshots/whatsapp_16.png)
+![Phone setup — Separate phone selected](screenshots/whatsapp_15.png)
 
 When asked **WhatsApp DM policy**, select **Pairing (recommended)**.
 
-![DM policy — Pairing selected](screenshots/whatsapp_17.png)
+![DM policy — Pairing selected](screenshots/whatsapp_16.png)
 
 When asked **WhatsApp allowFrom**, select **Unset allowFrom (default)**.
 
-![allowFrom — Unset selected](screenshots/whatsapp_18.png)
+![allowFrom — Unset selected](screenshots/whatsapp_17.png)
 
 When asked **Select a channel**, select **Finished**.
 
-![Select a channel — Finished selected](screenshots/whatsapp_19.png)
+![Select a channel — Finished selected](screenshots/whatsapp_18.png)
 
 The wizard shows the selected channels summary.
 
-![Selected channels summary](screenshots/whatsapp_20.png)
+![Selected channels summary](screenshots/whatsapp_19.png)
 
 ---
 
-## Step 9: Complete Setup
+## Step 8: Complete Setup
 
 The wizard shows your Control UI URL. Save it.
 
-![Control UI info box with dashboard URL](screenshots/whatsapp_21.png)
+![Control UI info box with dashboard URL](screenshots/whatsapp_20.png)
 
 The wizard finishes.
 
-![Configure complete](screenshots/whatsapp_22.png)
+![Configure complete](screenshots/whatsapp_21.png)
 
 ---
 
-## Step 10: Approve the First Message (Pairing)
+## Step 9: Approve the First Message (Pairing)
 
 The first time someone messages your agent, OpenClaw sends them a **pairing code**. You will also see the code in your terminal logs.
 
@@ -171,7 +155,7 @@ openclaw pairing approve whatsapp <code>
 
 Replace `<code>` with the code from the terminal output.
 
-![openclaw pairing approve command](screenshots/whatsapp_23.png)
+![openclaw pairing approve command](screenshots/whatsapp_22.png)
 
 You will see:
 
@@ -179,7 +163,7 @@ You will see:
 Approved whatsapp sender +923XXXXXXXXX.
 ```
 
-![Pairing approved confirmation](screenshots/whatsapp_24.png)
+![Pairing approved confirmation](screenshots/whatsapp_23.png)
 
 That sender can now chat with your agent freely.
 
@@ -198,7 +182,6 @@ That sender can now chat with your agent freely.
 
 | Issue | Fix |
 |---|---|
-| Plugin install failed | Select **Use local plugin path instead → Yes** |
 | QR code expired | Run the wizard again and scan quickly |
 | Already 4 linked devices | Remove one in WhatsApp → Linked Devices first |
 | Gateway not running | `openclaw gateway start` |
