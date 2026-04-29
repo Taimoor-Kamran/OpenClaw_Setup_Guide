@@ -6,222 +6,179 @@ This guide walks you through linking your WhatsApp account to OpenClaw so your a
 > - OpenClaw must already be installed and running.
 > - You need a WhatsApp account on your phone.
 > - **Node.js 22 or higher** is required. Check with: `node --version`
-> - Recommended: use a secondary phone number or eSIM — not your main personal number.
+> - Recommended: use a separate phone or eSIM — not your main personal number.
 
 ---
 
-## Step 1: Open the OpenClaw Dashboard
-
-First make sure the gateway is running:
+## Step 1: Make Sure the Gateway is Running
 
 ```bash
 openclaw gateway start
 ```
 
-![openclaw gateway start command](screenshots/installation_23b.png)
+![openclaw gateway start command](screenshots/whatsapp_1.png)
 
-Then open the dashboard:
+---
+
+## Step 2: Open the Channel Configuration Wizard
 
 ```bash
-openclaw dashboard
+openclaw configure --section channels
 ```
 
-![openclaw dashboard command in terminal](screenshots/installation_23.png)
+![openclaw configure --section channels command](screenshots/whatsapp_2.png)
 
-> **WSL Note**
-> On WSL the browser may not open automatically. If nothing opens, go to your browser manually and visit:
-> ```
-> http://127.0.0.1:18789/
-> ```
+The wizard starts and shows your existing config.
 
-If prompted for a token, paste your gateway token. To get it run:
-
-```bash
-openclaw config get gateway.auth.token
-```
-
-![OpenClaw dashboard in browser](screenshots/installation_24.png)
+![Existing config detected](screenshots/whatsapp_3.png)
 
 ---
 
-## Step 2: Go to Channels
+## Step 3: Select Gateway Location
 
-In the dashboard, click **Channels** in the left sidebar.
+When asked **Where will the Gateway run?**, select **Local (this machine)**.
 
-![Channels section in dashboard](screenshots/installation_25.png)
-
----
-
-## Step 3: Add the WhatsApp Channel (CLI)
-
-In your Ubuntu terminal, run:
-
-```bash
-openclaw channels add --channel whatsapp
-```
-
-![openclaw channels add --channel whatsapp command](screenshots/installation_26.png)
-
-You will see:
-
-```
-Added WhatsApp account "default".
-```
-
-![WhatsApp account added confirmation](screenshots/installation_27.png)
+![Gateway location — Local selected](screenshots/whatsapp_4.png)
 
 ---
 
-## Step 4: Restart the Gateway
+## Step 4: Open Channel Setup
 
-After adding the channel, restart the gateway so the dashboard picks it up:
+When asked **Channels**, select **Configure/link**.
 
-```bash
-openclaw gateway restart
-```
+![Channels — Configure/link selected](screenshots/whatsapp_5.png)
 
-![openclaw gateway restart command](screenshots/installation_28.png)
+The wizard shows an info box explaining how channels work. Read it, then continue.
 
-Or stop and start manually:
-
-```bash
-openclaw gateway stop
-openclaw gateway start
-```
-
-> **Wait a few seconds** after the gateway restarts before clicking Show QR. If you click too early you may get a "login provider not available" error.
+![How channels work info box](screenshots/whatsapp_6.png)
 
 ---
 
-> **Check before continuing**
-> If your WhatsApp already has 4 linked devices, go to **WhatsApp → Settings → Linked Devices** on your phone and remove one before scanning the QR code. WhatsApp allows a maximum of 4 linked devices.
+## Step 5: Select WhatsApp
+
+When asked **Select a channel**, select **WhatsApp (QR link)**.
+
+![Select a channel — WhatsApp selected](screenshots/whatsapp_7.png)
 
 ---
 
-## Step 5a: Link WhatsApp — via Dashboard
+## Step 6: Install the WhatsApp Plugin
 
-Once the gateway is back up, go to your browser:
+When asked **Install WhatsApp plugin?**, select **Download from npm (@openclaw/whatsapp)**.
 
-1. Refresh the dashboard page.
-2. Go to **Channels** → **WhatsApp**.
-3. Click **Show QR**.
+![Install WhatsApp plugin — Download from npm selected](screenshots/whatsapp_8.png)
 
-> **QR codes expire in about 20 seconds.** Have your phone ready and open before clicking Show QR.
+> **If the install fails** with "Package not found on npm", you will see this error:
 
-![WhatsApp channel — Show QR button](screenshots/installation_29.png)
+![Plugin install failed message](screenshots/whatsapp_9.png)
 
-4. A QR code appears on your screen.
+When asked **Use local plugin path instead?**, select **Yes**.
 
-![QR code displayed in dashboard](screenshots/installation_30.png)
-
-5. On your phone: open **WhatsApp** → **Settings** → **Linked Devices** → **Link a Device** → scan the QR code.
-
-After scanning, the dashboard shows:
-
-```
-Linked: Yes
-Running: Yes
-Connected: Yes
-```
-
-![WhatsApp linked and running status in dashboard](screenshots/installation_31.png)
+![Use local plugin path — Yes selected](screenshots/whatsapp_10.png)
 
 ---
 
-## Step 5b: Link WhatsApp — via Terminal (Alternative)
+## Step 7: Link Your WhatsApp
 
-If the dashboard QR does not work, scan directly from the terminal instead:
+The wizard shows a linking info box. Read it, then continue.
 
-```bash
-openclaw channels login --channel whatsapp
+![WhatsApp linking info box](screenshots/whatsapp_11.png)
+
+When asked **Link WhatsApp now (QR)?**, select **Yes**.
+
+![Link WhatsApp now — Yes selected](screenshots/whatsapp_12.png)
+
+A QR code appears in the terminal.
+
+![QR code displayed in terminal](screenshots/whatsapp_13.png)
+
+> **The QR code refreshes every ~20 seconds.** Have your phone ready before selecting Yes.
+
+On your phone:
+1. Open **WhatsApp**
+2. Tap **Settings** → **Linked Devices**
+3. Tap **Link a Device**
+4. Scan the QR code on your screen
+
+After scanning, the terminal shows:
+
+```
+WhatsApp asked for a restart after pairing (code 515); waiting for creds to save…
+✅ Linked after restart; web session ready.
 ```
 
-![QR code displayed in terminal](screenshots/installation_32.png)
-
-Scan the QR code that appears in the terminal with your phone using the same steps above.
+![WhatsApp linked successfully in terminal](screenshots/whatsapp_14.png)
 
 ---
 
-## Step 6: Allow Your Phone Number
+## Step 8: Configure DM Settings
 
-Before testing, add your phone number to the **Allow From** list so the bot accepts your messages.
+The wizard shows the **WhatsApp DM access** info box explaining DM policies.
 
-In the dashboard, find the **Allow From** section:
+![WhatsApp DM access info box](screenshots/whatsapp_15.png)
 
-1. Click **Add**.
-2. Enter your number with country code — example: `+923XXXXXXXXX`.
-3. Click **Save**.
+When asked **WhatsApp phone setup**, select **Separate phone just for OpenClaw**.
 
-![Allow From section in dashboard](screenshots/installation_33.png)
+![Phone setup — Separate phone selected](screenshots/whatsapp_16.png)
 
-![Phone number added to Allow From list](screenshots/installation_34.png)
+When asked **WhatsApp DM policy**, select **Pairing (recommended)**.
 
----
+![DM policy — Pairing selected](screenshots/whatsapp_17.png)
 
-## Step 7: Send a Test Message
+When asked **WhatsApp allowFrom**, select **Unset allowFrom (default)**.
 
-Open WhatsApp on your phone and send a message to the number you linked. Try:
+![allowFrom — Unset selected](screenshots/whatsapp_18.png)
 
-```
-hello
-```
+When asked **Select a channel**, select **Finished**.
 
-or
+![Select a channel — Finished selected](screenshots/whatsapp_19.png)
 
-```
-what can you do?
-```
+The wizard shows the selected channels summary.
 
-OpenClaw should reply.
-
-![Test message reply in WhatsApp](screenshots/installation_35.png)
+![Selected channels summary](screenshots/whatsapp_20.png)
 
 ---
 
-## Step 8: Fix Raw JSON Replies (If Needed)
+## Step 9: Complete Setup
 
-If OpenClaw replies with raw JSON instead of normal text, fix it from the dashboard:
+The wizard shows your Control UI URL. Save it.
 
-**1. Enable Block Streaming** — find **Block Streaming** and toggle it **ON**.
+![Control UI info box with dashboard URL](screenshots/whatsapp_21.png)
 
-![Block Streaming toggle ON](screenshots/installation_36.png)
+The wizard finishes.
 
-**2. Set Chunk Mode to newline** — find **Chunk Mode** and select **newline**.
-
-![Chunk Mode set to newline](screenshots/installation_37.png)
-
-**3. Set Reaction Level to minimal** — find **Reaction Level** and select **minimal**.
-
-![Reaction Level set to minimal](screenshots/installation_38.png)
-
-**4. Click Save.**
-
-![Save button in dashboard](screenshots/installation_39.png)
-
-If replies are still raw JSON after saving, update OpenClaw and restart:
-
-```bash
-openclaw update
-openclaw gateway restart
-```
-
-![openclaw update and restart commands](screenshots/installation_40.png)
+![Configure complete](screenshots/whatsapp_22.png)
 
 ---
 
-## Step 9: Approve the Pairing Code (First DM)
+## Step 10: Approve the First Message (Pairing)
 
-The first time someone new messages your agent, OpenClaw sends back a **pairing code** — this code appears as a WhatsApp reply message to the sender, and also in your terminal logs. To approve it, run:
+The first time someone messages your agent, OpenClaw sends them a **pairing code**. You will also see the code in your terminal logs.
+
+To approve it, run:
 
 ```bash
 openclaw pairing approve whatsapp <code>
 ```
 
-Replace `<code>` with the code from the WhatsApp reply or terminal output.
+Replace `<code>` with the code from the terminal output.
 
-![Pairing code in WhatsApp reply and terminal logs](screenshots/installation_41.png)
+![openclaw pairing approve command](screenshots/whatsapp_23.png)
 
-> To allow anyone to message without a pairing code (open mode):
+You will see:
+
+```
+Approved whatsapp sender +923XXXXXXXXX.
+```
+
+![Pairing approved confirmation](screenshots/whatsapp_24.png)
+
+That sender can now chat with your agent freely.
+
+---
+
+> **Open Mode (Optional)**
+> To allow anyone to message without a pairing code, run:
 > ```bash
 > openclaw config set channels.whatsapp.dmPolicy open
 > openclaw config set channels.whatsapp.allowFrom '["*"]'
@@ -233,22 +190,20 @@ Replace `<code>` with the code from the WhatsApp reply or terminal output.
 
 | Issue | Fix |
 |---|---|
-| Plugin not installed | `openclaw channels add --channel whatsapp` |
+| Plugin install failed | Select **Use local plugin path instead → Yes** |
+| QR code expired | Run the wizard again and scan quickly |
+| Already 4 linked devices | Remove one in WhatsApp → Linked Devices first |
 | Gateway not running | `openclaw gateway start` |
-| QR expired | Click **Relink** and scan again quickly |
-| Already 4 linked devices | Remove an old device in WhatsApp first |
-| web login provider is not available | Run `openclaw channels add --channel whatsapp` then restart gateway |
-| Raw JSON replies | Enable Block Streaming, set Chunk Mode to newline, Reaction Level to minimal |
-| Still broken after settings | `openclaw update` then `openclaw gateway restart` |
+| Bot not replying | Run `openclaw pairing approve whatsapp <code>` |
 
 ---
 
 ## Troubleshooting
 
-**WhatsApp disconnected after a while** — Re-scan the QR code:
+**WhatsApp disconnected after a while** — Re-run the wizard to re-scan:
 
 ```bash
-openclaw channels login --channel whatsapp
+openclaw configure --section channels
 ```
 
 **Agent not replying** — Check gateway status:
@@ -257,14 +212,9 @@ openclaw channels login --channel whatsapp
 openclaw gateway status
 ```
 
-If the gateway was never started, start it:
+Start or restart as needed:
 
 ```bash
 openclaw gateway start
-```
-
-If it was running before but stopped, restart it:
-
-```bash
 openclaw gateway restart
 ```
