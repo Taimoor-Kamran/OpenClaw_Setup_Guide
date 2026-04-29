@@ -76,7 +76,7 @@ Open **User Settings** by clicking the gear icon near your name at the bottom le
 
 ![Gear icon — User Settings](screenshots/discord_11.png)
 
-Scroll down and click **Advanced**.
+Scroll down and click **Developer**.
 
 ![Advanced section in settings](screenshots/discord_12.png)
 
