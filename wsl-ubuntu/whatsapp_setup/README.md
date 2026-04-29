@@ -73,17 +73,8 @@ If WhatsApp is already linked, the wizard asks if you want to re-link. Select **
 ## Step 6: Link Your WhatsApp
 
 The wizard shows a linking info box. Read it, then continue.
-
-![WhatsApp linking info box](screenshots/whatsapp_10.png)
-
 When asked **Link WhatsApp now (QR)?**, select **Yes**.
-
-![Link WhatsApp now — Yes selected](screenshots/whatsapp_11.png)
-
 A QR code appears in the terminal.
-
-![QR code displayed in terminal](screenshots/whatsapp_12.png)
-
 > **The QR code refreshes every ~20 seconds.** Have your phone ready before selecting Yes.
 
 On your phone:
