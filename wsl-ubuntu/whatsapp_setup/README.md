@@ -95,8 +95,7 @@ On your phone:
 After scanning, the terminal shows:
 
 ```
-WhatsApp asked for a restart after pairing (code 515); waiting for creds to save…
-✅ Linked after restart; web session ready.
+✅ Linked! Credentials saved for future sends.
 ```
 
 ![WhatsApp linked successfully in terminal](screenshots/whatsapp_13.png)
