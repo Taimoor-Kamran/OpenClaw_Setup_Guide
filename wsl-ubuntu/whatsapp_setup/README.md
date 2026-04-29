@@ -125,21 +125,17 @@ When asked **Select a channel**, select **Finished**.
 
 ![Select a channel — Finished selected](screenshots/whatsapp_18.png)
 
-The wizard shows the selected channels summary.
-
-![Selected channels summary](screenshots/whatsapp_19.png)
-
 ---
 
 ## Step 8: Complete Setup
 
 The wizard shows your Control UI URL. Save it.
 
-![Control UI info box with dashboard URL](screenshots/whatsapp_20.png)
+![Control UI info box with dashboard URL](screenshots/whatsapp_19.png)
 
 The wizard finishes.
 
-![Configure complete](screenshots/whatsapp_21.png)
+![Configure complete](screenshots/whatsapp_20.png)
 
 ---
 
@@ -155,7 +151,7 @@ openclaw pairing approve whatsapp <code>
 
 Replace `<code>` with the code from the terminal output.
 
-![openclaw pairing approve command](screenshots/whatsapp_22.png)
+![openclaw pairing approve command](screenshots/whatsapp_21.png)
 
 You will see:
 
@@ -163,7 +159,7 @@ You will see:
 Approved whatsapp sender +923XXXXXXXXX.
 ```
 
-![Pairing approved confirmation](screenshots/whatsapp_23.png)
+![Pairing approved confirmation](screenshots/whatsapp_22.png)
 
 That sender can now chat with your agent freely.
 
