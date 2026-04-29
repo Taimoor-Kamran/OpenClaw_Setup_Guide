@@ -64,6 +64,10 @@ If WhatsApp is already configured, the wizard asks what you want to do. Select *
 
 ![WhatsApp already configured — Modify settings selected](screenshots/whatsapp_5b.png)
 
+If WhatsApp is already linked, the wizard asks if you want to re-link. Select **No** to keep the existing link, or **Yes** to scan a new QR code.
+
+![WhatsApp already linked — Re-link now prompt](screenshots/whatsapp_5c.png)
+
 ---
 
 ## Step 6: Install the WhatsApp Plugin
