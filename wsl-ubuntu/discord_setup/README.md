@@ -96,41 +96,37 @@ Click **New Application** and give it a name (example: `My AI Employee`).
 
 ![New Application name entered](screenshots/discord_15.png)
 
-Click **Create**.
-
-![Create button clicked](screenshots/discord_16.png)
-
 In the left sidebar, click **Bot**.
 
-![Bot in left sidebar](screenshots/discord_17.png)
+![Bot in left sidebar](screenshots/discord_16.png)
 
 Find the **Token** section and click **Reset Token**.
 
-![Reset Token button](screenshots/discord_18.png)
+![Reset Token button](screenshots/discord_17.png)
 
 Click **Yes, do it!** to confirm, then click **Copy**.
 
 > ⚠️ **Keep this token secret.** Never share it or commit it to GitHub. This is the password for your bot.
 
-![Token copied](screenshots/discord_19.png)
+![Token copied](screenshots/discord_18.png)
 
 Scroll down to **Privileged Gateway Intents**. Toggle **ON** all three:
 
 **Presence Intent**
 
-![Presence Intent toggled ON](screenshots/discord_20.png)
+![Presence Intent toggled ON](screenshots/discord_19.png)
 
 **Server Members Intent**
 
-![Server Members Intent toggled ON](screenshots/discord_21.png)
+![Server Members Intent toggled ON](screenshots/discord_20.png)
 
 **Message Content Intent** — this is the most important. Without it the bot cannot read your messages.
 
-![Message Content Intent toggled ON](screenshots/discord_22.png)
+![Message Content Intent toggled ON](screenshots/discord_21.png)
 
 Click **Save Changes**.
 
-![Save Changes clicked](screenshots/discord_23.png)
+![Save Changes clicked](screenshots/discord_22.png)
 
 ---
 
@@ -138,30 +134,30 @@ Click **Save Changes**.
 
 In the left sidebar, click **OAuth2**, then select **URL Generator**.
 
-![OAuth2 URL Generator](screenshots/discord_24.png)
+![OAuth2 URL Generator](screenshots/discord_23.png)
 
 Under **Scopes**, check `bot`.
 
-![bot scope checked](screenshots/discord_25.png)
+![bot scope checked](screenshots/discord_24.png)
 
 Under **Bot Permissions**, check:
 - `Read Messages / View Channels`
 - `Send Messages`
 - `Read Message History`
 
-![Bot permissions checked](screenshots/discord_26.png)
+![Bot permissions checked](screenshots/discord_25.png)
 
 Copy the URL generated at the bottom.
 
-![Generated URL copied](screenshots/discord_27.png)
+![Generated URL copied](screenshots/discord_26.png)
 
 Paste it into a new browser tab and follow the prompts to add the bot to your server.
 
-![Bot invite page in browser](screenshots/discord_28.png)
+![Bot invite page in browser](screenshots/discord_27.png)
 
 Click **Authorize**.
 
-![Authorize button clicked](screenshots/discord_29.png)
+![Authorize button clicked](screenshots/discord_28.png)
 
 ---
 
@@ -171,19 +167,19 @@ Go back to the OpenClaw wizard. It asks for three values:
 
 **Guild (server name)** — enter your server name (example: `AI Office`).
 
-![Guild server name entered in wizard](screenshots/discord_30.png)
+![Guild server name entered in wizard](screenshots/discord_29.png)
 
 **Channel** — enter your channel name (default is `general`).
 
-![Channel name entered in wizard](screenshots/discord_31.png)
+![Channel name entered in wizard](screenshots/discord_30.png)
 
 **Bot Token** — paste the token you copied in Step 4.
 
-![Bot token pasted in wizard](screenshots/discord_32.png)
+![Bot token pasted in wizard](screenshots/discord_31.png)
 
 The wizard writes the configuration for you. No manual editing required.
 
-![Wizard configuration complete](screenshots/discord_33.png)
+![Wizard configuration complete](screenshots/discord_32.png)
 
 ---
 
@@ -195,11 +191,11 @@ The wizard writes the configuration for you. No manual editing required.
 
 In your server, look at the right-hand member list and click your bot's name.
 
-![Bot name in member list](screenshots/discord_34.png)
+![Bot name in member list](screenshots/discord_33.png)
 
 Click **Message** to open a DM.
 
-![Message button to open DM](screenshots/discord_35.png)
+![Message button to open DM](screenshots/discord_34.png)
 
 Send a message:
 
@@ -207,11 +203,11 @@ Send a message:
 hello
 ```
 
-![hello sent in bot DM](screenshots/discord_36.png)
+![hello sent in bot DM](screenshots/discord_35.png)
 
 The bot should reply.
 
-![Bot reply in DM](screenshots/discord_37.png)
+![Bot reply in DM](screenshots/discord_36.png)
 
 > To make the bot reply inside a channel, you need to change `groupPolicy` to `open` and `@mention` the bot. For now, use DM.
 
