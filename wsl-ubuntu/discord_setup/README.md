@@ -138,7 +138,7 @@ In the left sidebar, click **OAuth2**, then select **URL Generator**.
 
 Under **Scopes**, check `bot`.
 
-![bot scope checked](screenshots/)
+![bot scope checked](screenshots/discord_24.png)
 
 Under **Bot Permissions**, check:
 - `Read Messages / View Channels`
