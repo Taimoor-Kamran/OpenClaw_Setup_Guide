@@ -163,7 +163,17 @@ Click **Authorize**.
 
 ## Step 6: Enter the Details in the Wizard
 
-Go back to the OpenClaw wizard. It asks for three values:
+Run the channel wizard and select **Discord (Bot API)**.
+
+```bash
+openclaw configure --section channels
+```
+
+![Select Discord Bot API in wizard](screenshots/discord_1.png)
+
+The wizard needs three things: a **server name (guild)**, a **channel name**, and a **bot token**. You will create the server and channel first, then create the bot.
+
+It asks for three values:
 
 **Guild (server name)** — enter your server name (example: `AI Office`).
 
